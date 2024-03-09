@@ -1,9 +1,11 @@
+import NaveBar from "@/components/naveBar/NaveBar";
 import Image from "next/image";
 
 export default function Home() {
   return (
   <>
-  <h1>hello</h1>
+  <NaveBar/>
+  <h1 className="bg-primary">hello</h1>
   </>
   );
 }
