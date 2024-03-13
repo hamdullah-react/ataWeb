@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React from "react";
+import Dropdown from "./Dropdown";
 
 function NaveBar() {
   return (
@@ -87,31 +89,7 @@ function NaveBar() {
           <div className="container-fluid mb-5">
             <div className="row border-top px-xl-5">
               <div className="col-lg-3 d-none d-lg-block">
-                <div className="nav-item dropdown">
-                  <a
-                    href="#"
-                    className="hover:text-[black] nav-link shadow-none d-flex align-items-center justify-content-between bg-primary text-black w-100"
-                    data-toggle="dropdown"
-                    style={{ height: 65, marginTop: "-1px", padding: "0 30px" }}
-                  >
-                    Categories{" "}
-                    <i className="fa fa-angle-down float-right mt-1" />
-                  </a>
-                  <div className=" dropdown-menu position-absolute bg-secondary border-2 rounded-0 w-100 m-0">
-                    <a href="" className="border-[] dropdown-item">
-                      Camera polls
-                    </a>
-                    <a href="" className="dropdown-item">
-                      Cables
-                    </a>
-                    <a href="" className="dropdown-item">
-                      Devices
-                    </a>
-                    <a href="" className="dropdown-item">
-                      Adaptor & Power supply
-                    </a>
-                  </div>
-                </div>
+                <Dropdown />
               </div>
               <div className="col-lg-9">
                 <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
@@ -123,22 +101,14 @@ function NaveBar() {
                       Shopper
                     </h1>
                   </a>
-                  <button
-                    type="button"
-                    className="navbar-toggler"
-                    data-toggle="collapse"
-                    data-target="#navbarCollapse"
-                  >
-                    <span className="navbar-toggler-icon" />
-                  </button>
                   <div
                     className=" navbar-collapse justify-content-between"
                     id="navbarCollapse"
                   >
                     <div className="navbar-nav mr-auto py-0">
-                      <a href="index.html" className="nav-item nav-link active">
+                      <Link href="/" className="nav-item nav-link active">
                         Home
-                      </a>
+                      </Link>
                       <a href="shop.html" className="nav-item nav-link">
                         Shop
                       </a>
@@ -162,9 +132,9 @@ function NaveBar() {
                           </a>
                         </div>
                       </div>
-                      <a href="contact.html" className="nav-item nav-link">
+                      <Link href="contactus" className="nav-item nav-link">
                         Contact
-                      </a>
+                      </Link>
                     </div>
                     <div className="navbar-nav ml-auto py-0">
                       <a href="" className="nav-item nav-link">
@@ -176,7 +146,7 @@ function NaveBar() {
                     </div>
                   </div>
                 </nav>
-                <div
+                {/* <div
                   id="header-carousel"
                   className="carousel slide"
                   data-ride="carousel"
@@ -192,9 +162,7 @@ function NaveBar() {
                           <h4 className="text-light text-uppercase font-weight-medium mb-3">
                             10% Off Your First Order
                           </h4>
-                          <h3 className="display-4 text-white font-weight-semi-bold mb-4">
-                          
-                          </h3>
+                          <h3 className="display-4 text-white font-weight-semi-bold mb-4"></h3>
                           <a href="" className="btn btn-light py-2 px-3">
                             Shop Now
                           </a>
@@ -208,9 +176,7 @@ function NaveBar() {
                           <h4 className="text-light text-uppercase font-weight-medium mb-3">
                             10% Off Your First Order
                           </h4>
-                          <h3 className="display-4 text-white font-weight-semi-bold mb-4">
-                        
-                          </h3>
+                          <h3 className="display-4 text-white font-weight-semi-bold mb-4"></h3>
                           <a href="" className="btn btn-light py-2 px-3">
                             Shop Now
                           </a>
@@ -242,56 +208,12 @@ function NaveBar() {
                       <span className="carousel-control-next-icon mb-n2" />
                     </div>
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           {/* Navbar End */}
-          <>
-  {/* Featured Start */}
-  <div className="container-fluid pt-5">
-    <div className="row px-xl-5 pb-3">
-      <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-        <div
-          className="d-flex align-items-center border mb-4"
-          style={{ padding: 30 }}
-        >
-          <h1 className="fa fa-check text-primary m-0 mr-3" />
-          <h5 className="font-weight-semi-bold m-0">Quality Product</h5>
-        </div>
-      </div>
-      <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-        <div
-          className="d-flex align-items-center border mb-4"
-          style={{ padding: 30 }}
-        >
-          <h1 className="fa fa-shipping-fast text-primary m-0 mr-2" />
-          <h5 className="font-weight-semi-bold m-0">Free Shipping</h5>
-        </div>
-      </div>
-      <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-        <div
-          className="d-flex align-items-center border mb-4"
-          style={{ padding: 30 }}
-        >
-          <h1 className="fas fa-exchange-alt text-primary m-0 mr-3" />
-          <h5 className="font-weight-semi-bold m-0">14-Day Return</h5>
-        </div>
-      </div>
-      <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-        <div
-          className="d-flex align-items-center border mb-4"
-          style={{ padding: 30 }}
-        >
-          <h1 className="fa fa-phone-volume text-primary m-0 mr-3" />
-          <h5 className="font-weight-semi-bold m-0">24/7 Support</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* Featured End */}
-</>
-
+          <></>
         </>
       </>
     </>
