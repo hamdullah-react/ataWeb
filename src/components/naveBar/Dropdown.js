@@ -2,22 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState(true);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  useEffect(() => {
-    // Initialize Bootstrap dropdown component when the component mounts
-    const dropdownElement = document.querySelector(".dropdown-toggle");
-    dropdownElement.addEventListener("click", toggleDropdown);
-
-    // Clean up event listener when the component unmounts
-    return () => {
-      dropdownElement.removeEventListener("click", toggleDropdown);
-    };
-  }, []);
 
   return (
     <>

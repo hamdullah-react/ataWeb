@@ -1,8 +1,25 @@
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
   return (
     <>
+    <div className="container-fluid bg-secondary mb-5">
+  <div
+    className="d-flex flex-column align-items-center justify-content-center"
+    style={{ minHeight: 300 }}
+  >
+    <h1 className="font-weight-semi-bold text-uppercase mb-3">Contact Us</h1>
+    <div className="d-inline-flex">
+      <p className="m-0">
+        <Link href="/">Home</Link>
+      </p>
+      <p className="m-0 px-2">-</p>
+      <p className="m-0">Contact Us</p>
+    </div>
+  </div>
+</div>
+ 
   {/* Contact Start */}
   <div className="container-fluid pt-5">
     <div className="text-center mb-4">
@@ -106,26 +123,23 @@ const page = () => {
     </div>
   </div>
   {/* Contact End */}
-<div className='container'>
-  <div className='row'>
-    <div className='col-md-10'>
 
-    <iframe
-  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.9332026577003!2d55.30652977538432!3d25.27283237766228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE2JzIyLjIiTiA1NcKwMTgnMzIuOCJF!5e0!3m2!1sen!2s!4v1710309529056!5m2!1sen!2s"
-  width={600}
-  height={450}
-  style={{ border: 0 }}
-  allowFullScreen=""
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-/>
-
-
-    </div>
-
-  </div>
-
-</div>
+      {/* Google Map */}
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.9332026577003!2d55.30652977538432!3d25.27283237766228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE2JzIyLjIiTiA1NcKwMTgnMzIuOCJF!5e0!3m2!1sen!2s!4v1710309529056!5m2!1sen!2s"
+                frameBorder="0"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
   
 </>
 

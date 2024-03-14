@@ -71,7 +71,7 @@ function NaveBar() {
                 </div>
               </form>
             </div>
-            <div className="col-lg-3 col-6 text-right">
+            {/* <div className="col-lg-3 col-6 text-right">
               <a href="" className="btn border">
                 <i className="fas fa-heart text-primary" />
                 <span className="badge">0</span>
@@ -80,7 +80,7 @@ function NaveBar() {
                 <i className="fas fa-shopping-cart text-primary" />
                 <span className="badge">0</span>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* Topbar End */}
@@ -109,40 +109,13 @@ function NaveBar() {
                       <Link href="/" className="nav-item nav-link active">
                         Home
                       </Link>
-                      <a href="shop.html" className="nav-item nav-link">
-                        Shop
-                      </a>
-                      <a href="detail.html" className="nav-item nav-link">
-                        Shop Detail
-                      </a>
-                      <div className="nav-item dropdown">
-                        <a
-                          href="#"
-                          className="nav-link dropdown-toggle"
-                          data-toggle="dropdown"
-                        >
-                          Pages
-                        </a>
-                        <div className="dropdown-menu rounded-0 m-0">
-                          <a href="cart.html" className="dropdown-item">
-                            Shopping Cart
-                          </a>
-                          <a href="checkout.html" className="dropdown-item">
-                            Checkout
-                          </a>
-                        </div>
-                      </div>
-                      <Link href="contactus" className="nav-item nav-link">
+                      <Link href="/aboutus" className="nav-item nav-link">
+                        About Us
+                      </Link>
+                   
+                      <Link href="/contactus" className="nav-item nav-link">
                         Contact
                       </Link>
-                    </div>
-                    <div className="navbar-nav ml-auto py-0">
-                      <a href="" className="nav-item nav-link">
-                        Login
-                      </a>
-                      <a href="" className="nav-item nav-link">
-                        Register
-                      </a>
                     </div>
                   </div>
                 </nav>

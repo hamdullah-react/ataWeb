@@ -6,7 +6,7 @@ const AllproductModal = ({product}) => {
     <>
       <>
         {/* Button trigger modal */}
-        <button
+        <span
           type="button"
           className="btn btn-primary w-[100%] flex justify-between"
           data-bs-toggle="modal"
@@ -14,7 +14,7 @@ const AllproductModal = ({product}) => {
         >
            <i className="fas fa-eye text-primary mr-1 mt-1" />
          View Detail
-        </button>
+        </span>
         {/* Modal */}
         <div
           className="modal fade"

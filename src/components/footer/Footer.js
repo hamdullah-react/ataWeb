@@ -44,59 +44,35 @@ const Footer = () => {
           <div className="col-md-4 mb-5">
             <h5 className="font-weight-bold text-dark mb-4">Quick Links</h5>
             <div className="d-flex flex-column justify-content-start">
-              <a className="text-dark mb-2" href="index.html">
+              <Link className="text-dark mb-2" href="/">
                 <i className="fa fa-angle-right mr-2" />
                 Home
-              </a>
-              <a className="text-dark mb-2" href="shop.html">
+              </Link>
+              <Link className="text-dark mb-2" href="/aboutus">
                 <i className="fa fa-angle-right mr-2" />
-                Our Shop
-              </a>
-              <a className="text-dark mb-2" href="detail.html">
+                About Us
+              </Link>
+              <Link className="text-dark mb-2" href="/contactus">
                 <i className="fa fa-angle-right mr-2" />
-                Shop Detail
-              </a>
-              <a className="text-dark mb-2" href="cart.html">
-                <i className="fa fa-angle-right mr-2" />
-                Shopping Cart
-              </a>
-              <a className="text-dark mb-2" href="checkout.html">
-                <i className="fa fa-angle-right mr-2" />
-                Checkout
-              </a>
-              <a className="text-dark" href="contact.html">
-                <i className="fa fa-angle-right mr-2" />
-                Contact Us
-              </a>
+               Contact Us
+              </Link>
             </div>
           </div>
           <div className="col-md-4 mb-5">
             <h5 className="font-weight-bold text-dark mb-4">Quick Links</h5>
             <div className="d-flex flex-column justify-content-start">
-              <a className="text-dark mb-2" href="index.html">
+            <Link className="text-dark mb-2" href="/">
                 <i className="fa fa-angle-right mr-2" />
                 Home
-              </a>
-              <a className="text-dark mb-2" href="shop.html">
+              </Link>
+              <Link className="text-dark mb-2" href="/aboutus">
                 <i className="fa fa-angle-right mr-2" />
-                Our Shop
-              </a>
-              <a className="text-dark mb-2" href="detail.html">
+                About Us
+              </Link>
+              <Link className="text-dark mb-2" href="/contactus">
                 <i className="fa fa-angle-right mr-2" />
-                Shop Detail
-              </a>
-              <a className="text-dark mb-2" href="cart.html">
-                <i className="fa fa-angle-right mr-2" />
-                Shopping Cart
-              </a>
-              <a className="text-dark mb-2" href="checkout.html">
-                <i className="fa fa-angle-right mr-2" />
-                Checkout
-              </a>
-              <a className="text-dark" href="contact.html">
-                <i className="fa fa-angle-right mr-2" />
-                Contact Us
-              </a>
+               Contact Us
+              </Link>
             </div>
           </div>
           <div className="col-md-4 mb-5">
