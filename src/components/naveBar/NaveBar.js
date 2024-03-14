@@ -49,9 +49,9 @@ function NaveBar() {
               <a href="" className="text-decoration-none">
                 <h1 className="m-0 display-5 font-weight-semi-bold">
                   <span className="text-primary font-weight-bold border px-3 mr-1">
-                    E
+                    M
                   </span>
-                  Shopper
+                  GSS
                 </h1>
               </a>
             </div>
@@ -96,9 +96,9 @@ function NaveBar() {
                   <a href="" className="text-decoration-none d-block d-lg-none">
                     <h1 className="m-0 display-5 font-weight-semi-bold">
                       <span className="text-primary font-weight-bold border px-3 mr-1">
-                        E
+                        M
                       </span>
-                      Shopper
+                      GSS
                     </h1>
                   </a>
                   <div
