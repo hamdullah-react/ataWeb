@@ -49,12 +49,6 @@ const Aboutus = () => {
                       As a customer-centric company, we actively seek feedback and suggestions to enhance our services and products.
 
                     </p>
-                    <a
-                      href="https://nicepage.one"
-                      className="u-align-center-sm u-align-center-xs u-border-none u-btn u-button-style u-hover-palette-2-light-1 u-palette-2-base u-text-black u-btn-1"
-                    >
-                      view all
-                    </a>
                   </div>
                 </div>
               </div>
