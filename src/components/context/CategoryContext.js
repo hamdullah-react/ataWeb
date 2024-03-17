@@ -44,12 +44,11 @@ export const CategoryProvider = ({ children }) => {
         );
   
   const contextValues = {
-    name: 'hamdulls',
     selectedCategory,
     searchQuery,
     handleCategorySelect, 
     handleSearchInputChange,
-    filteredProducts// Set the desired name here
+    filteredProducts
   };
 
   return (

@@ -15,8 +15,8 @@ export default function Home() {
   return (
   <>
    
-   <Headerslider/>
-  <Catagorie/>
+  <Headerslider/>
+  {/* <Catagorie/> */}
   <Lable/>
   <AllProducts/>
   <JustArrive/>

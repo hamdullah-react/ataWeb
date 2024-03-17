@@ -56,7 +56,7 @@ function NaveBar() {
               </a>
             </div>
             <div className="col-lg-6 col-6 text-left">
-              <form action="">
+              {/* <form action="">
                 <div className="input-group">
                   <input
                     type="text"
@@ -69,7 +69,7 @@ function NaveBar() {
                     </span>
                   </div>
                 </div>
-              </form>
+              </form> */}
             </div>
             {/* <div className="col-lg-3 col-6 text-right">
               <a href="" className="btn border">

@@ -31,11 +31,11 @@ export default function RootLayout({ children }) {
 
       <body className={inter.className}>
         <LoadingPage />
-        <NaveBar />
-
         <CategoryProvider>
-        {children}
+        <NaveBar />
         </CategoryProvider>
+
+        {children}
 
         <Footer />
 

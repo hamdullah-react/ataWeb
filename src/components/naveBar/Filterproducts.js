@@ -5,7 +5,7 @@ import AllproductModal from "../allproducts/AllproductModal";
 import {categories} from '../../app/Data'
 import { useCategoryContext } from "../../components/context/CategoryContext";
 
-const Catvoisepage = () => {
+const Filterproducts = () => {
     const {
         selectedCategory,
         searchQuery,
@@ -57,9 +57,9 @@ const Catvoisepage = () => {
                   <span className="badge border font-weight-normal">{categories.length}</span>
                 </div>
 
-                {categories.map((category,index) => (
+                {categories.map((category) => (
                   <div
-                    key={index}
+                    key={category.id}
                     className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3"
                   >
                     <input
@@ -106,8 +106,8 @@ const Catvoisepage = () => {
                   </form>
                 </div>
               </div>
-              {filteredProducts.map((product,index) => (
-                 <div key={index} className="col-lg-3 col-md-6 col-sm-12 pb-1">
+              {filteredProducts.map((product) => (
+                 <div key={product.id} className="col-lg-3 col-md-6 col-sm-12 pb-1">
                  <div className="card product-item border-0 mb-4">
                    <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                      <Image
@@ -139,4 +139,4 @@ const Catvoisepage = () => {
   );
 };
 
-export default Catvoisepage;
+export default Filterproducts;
