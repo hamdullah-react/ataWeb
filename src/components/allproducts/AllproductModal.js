@@ -1,7 +1,7 @@
 import React from "react";
 
 const AllproductModal = ({product}) => {
-  console.log('first',product.id)
+  
   return (
     <>
       <>

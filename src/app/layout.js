@@ -5,6 +5,7 @@ import Footer from "@/components/footer/Footer";
 import LoadingPage from "@/loading";
 import "../app/globals.css";
 import NaveBar from "@/components/naveBar/NaveBar";
+import { CategoryProvider } from "@/components/context/CategoryContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +33,10 @@ export default function RootLayout({ children }) {
         <LoadingPage />
         <NaveBar />
 
+        <CategoryProvider>
         {children}
+        </CategoryProvider>
+
         <Footer />
 
         {/* Scripts */}
