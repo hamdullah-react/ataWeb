@@ -22,7 +22,7 @@ const Dropdown = () => {
           {
             categories.map((menu, index) => (
               <Link key={index} href={{
-                pathname: '/categoriepage',
+                pathname: '/categoriepage1',
                 query: { data: JSON.stringify(menu) },
               }}
                 className=" dropdown-item">
