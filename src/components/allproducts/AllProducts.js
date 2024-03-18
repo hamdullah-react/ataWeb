@@ -15,21 +15,21 @@ const AllProducts = () => {
         </div>
         {categories.map((cat, index) => (
           <div key={index}>
-            <h1 className="section-title px-5">
-              <span className="px-2">{cat.name}</span>
+            <h1 className="text-[20px] font-bold px-5">
+              {cat.name}
             </h1>
            
             <div className="row px-xl-5 pb-3 mt-4">
-              {cat.data.map((product) => (
+              {cat.data.map((product,index) => (
                 <div
-                  key={product.id}
+                  key={index}
                   className="col-lg-3 col-md-6 col-sm-12 pb-1"
                 >
                   <div className="card product-item border-0 mb-4">
                     <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                       <Image
                         src={`/${product.img}`}
-                        alt=""
+                        alt={product.name}
                         width={400}
                         height={600}
                         layout="responsive"

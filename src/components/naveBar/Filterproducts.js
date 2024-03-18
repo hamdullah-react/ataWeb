@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import AllproductModal from "../allproducts/AllproductModal";
 import {categories} from '../../app/Data'
 import { useCategoryContext } from "../../components/context/CategoryContext";
@@ -57,9 +57,9 @@ const Filterproducts = () => {
                   <span className="badge border font-weight-normal">{categories.length}</span>
                 </div>
 
-                {categories.map((category) => (
+                {categories.map((category,index) => (
                   <div
-                    key={category.id}
+                    key={index}
                     className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3"
                   >
                     <input
@@ -106,8 +106,8 @@ const Filterproducts = () => {
                   </form>
                 </div>
               </div>
-              {filteredProducts.map((product) => (
-                 <div key={product.id} className="col-lg-3 col-md-6 col-sm-12 pb-1">
+              {filteredProducts.map((product,index) => (
+                 <div key={index} className="col-lg-3 col-md-6 col-sm-12 pb-1">
                  <div className="card product-item border-0 mb-4">
                    <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                      <Image

@@ -17,7 +17,7 @@ export default function Home() {
    
   <Headerslider/>
   {/* <Catagorie/> */}
-  <Lable/>
+  {/* <Lable/> */}
   <AllProducts/>
   <JustArrive/>
   

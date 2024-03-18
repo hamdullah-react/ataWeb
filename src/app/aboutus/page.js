@@ -1,7 +1,12 @@
+
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+
+
 const Aboutus = () => {
+  
   const images = [
     { src: "/img/4.jpeg", alt: "Image 1" },
     { src: "/img/3.jpeg", alt: "Image 2" },
@@ -62,12 +67,12 @@ const Aboutus = () => {
                   <div key={index} className="col-sm-5">
                     <div className="u-container-align-center u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                       <div className="u-container-layout u-valign-middle u-container-layout-2">
-                        <img
+                        <Image
                           className="u-image u-image-round u-radius u-image-1"
-                          data-image-width={1600}
-                          data-image-height={2000}
-                          data-animation-name="customAnimationIn"
-                          data-animation-duration={2000}
+                          width={1600}
+                          height={2000}
+                          alt={imag.alt}
+                          
                           src={imag.src}
                         />
                       </div>

@@ -112,7 +112,7 @@ const Catvoisepage = () => {
                    <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                      <Image
                        src={`/${product.img}`}
-                       alt=''
+                       alt={product.name}
                        width={400}
                        height={600}
                        layout="responsive"

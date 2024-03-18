@@ -1,59 +1,42 @@
-import React from 'react';
+'use client'
+import Image from 'next/image';
+import { useState } from 'react';
 
-const Headerslider = () => {
+const MyCarousel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handlePrev = () => {
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const images = [
+    { src: '/img/1.jpeg', alt: 'First slide', height: 200 }, // Reduced height for responsiveness
+    { src: '/img/4.jpeg', alt: 'Second slide', height: 200 } // Reduced height for responsiveness
+  ];
+
   return (
-    <div id="header-carousel" className="carousel slide" data-ride="carousel">
-    <div className="carousel-inner">
-      <div className="carousel-item active" style={{ height: 410 }}>
-        <img className="img-fluid" src="img/1.jpeg" alt="Image" />
-        <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
-          <div className="p-3" style={{ maxWidth: 700 }}>
-            <h4 className="text-light text-uppercase font-weight-medium mb-3">
-             
-            </h4>
-            <h3 className="display-4 text-white font-weight-semi-bold mb-4">
-              
-            </h3>
-           
+    <div id="header-carousel" className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner">
+        {images.map((image, index) => (
+          <div key={index} className={`carousel-item${index === activeIndex ? ' active' : ''}`} style={{ height: image.height }}>
+            <Image src={image.src} alt={image.alt} layout="fill" objectFit="cover" />
           </div>
-        </div>
+        ))}
       </div>
-      <div className="carousel-item" style={{ height: 410 }}>
-        <img className="img-fluid" src="img/4.jpeg" alt="Image" />
-        <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
-          <div className="p-3" style={{ maxWidth: 700 }}>
-            <h4 className="text-light text-uppercase font-weight-medium mb-3">
-        
-            </h4>
-            <h3 className="display-4 text-white font-weight-semi-bold mb-4">
-           
-            </h3>
-           
-          </div>
-        </div>
-      </div>
+      <button className="carousel-control-prev" type="button" onClick={handlePrev} style={{ color: 'black' }}>
+        <span className="carousel-control-prev-icon" aria-hidden="true" style={{ color: 'black' }} />
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button className="carousel-control-next" type="button" onClick={handleNext} style={{ color: 'black' }}>
+        <span className="carousel-control-next-icon" aria-hidden="true" style={{ color: 'black' }} />
+        <span className="visually-hidden">Next</span>
+      </button>
     </div>
-    <a
-      className="carousel-control-prev"
-      href="#header-carousel"
-      data-slide="prev"
-    >
-      <div className="btn btn-dark" style={{ width: 45, height: 45 }}>
-        <span className="carousel-control-prev-icon mb-n2" />
-      </div>
-    </a>
-    <a
-      className="carousel-control-next"
-      href="#header-carousel"
-      data-slide="next"
-    >
-      <div className="btn btn-dark" style={{ width: 45, height: 45 }}>
-        <span className="carousel-control-next-icon mb-n2" />
-      </div>
-    </a>
-  </div>
-  
   );
 };
 
-export default Headerslider;
+export default MyCarousel;
