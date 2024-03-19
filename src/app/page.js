@@ -19,7 +19,7 @@ export default function Home() {
   {/* <Catagorie/> */}
   {/* <Lable/> */}
   <AllProducts/>
-  <JustArrive/>
+  {/* <JustArrive/> */}
   
   
  

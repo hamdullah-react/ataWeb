@@ -24,14 +24,16 @@ const AllProducts = () => {
                 <div
                   key={index}
                   className="col-lg-3 col-md-6 col-sm-12 pb-1"
+                
                 >
-                  <div className="card product-item border-0 mb-4">
+                  <div  style={{border:'2px solid red'}}
+                  className="card product-item border-0 mb-4">
                     <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                       <Image
                         src={`/${product.img}`}
                         alt={product.name}
-                        width={400}
-                        height={600}
+                        width={500}
+                        height={400}
                         layout="responsive"
                       />
                     </div>

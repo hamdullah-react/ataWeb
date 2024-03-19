@@ -9550,6 +9550,14 @@ a.text-dark:hover, a.text-dark:focus {
 .cat-item .cat-img img,
 .product-item .product-img img {
   transition: .5s;
+  height: 50vh !important;
+  object-fit: contain;
+
+}
+.cat-item .cat-img img,
+.product-item{
+/* height: 50vh !important; */
+height: 70vh;
 }
 
 .cat-item:hover .cat-img img,

@@ -14,16 +14,17 @@ const MyCarousel = () => {
   };
 
   const images = [
-    { src: '/img/1.jpeg', alt: 'First slide', height: 200 }, // Reduced height for responsiveness
-    { src: '/img/4.jpeg', alt: 'Second slide', height: 200 } // Reduced height for responsiveness
+    { src: '/img/1.jpeg', alt: 'First slide', height: 500 }, // Reduced height for responsiveness
+    { src: '/img/4.jpeg', alt: 'Second slide', height: 500 } // Reduced height for responsiveness
   ];
 
   return (
+    <>
     <div id="header-carousel" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
         {images.map((image, index) => (
           <div key={index} className={`carousel-item${index === activeIndex ? ' active' : ''}`} style={{ height: image.height }}>
-            <Image src={image.src} alt={image.alt} layout="fill" objectFit="cover" />
+            <Image src={image.src} alt={image.alt} layout="fill" style={{objectFit:'scale-down'}} />
           </div>
         ))}
       </div>
@@ -36,6 +37,8 @@ const MyCarousel = () => {
         <span className="visually-hidden">Next</span>
       </button>
     </div>
+    
+    </>
   );
 };
 
