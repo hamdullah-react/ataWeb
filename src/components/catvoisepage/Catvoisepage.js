@@ -13,6 +13,12 @@ const Catvoisepage = () => {
         handleSearchInputChange,
         filteredProducts} = useCategoryContext();
 
+
+        const totalProductsLength = categories.reduce((accumulator, category) => {
+
+          return accumulator + category.data.length;
+        }, 0);
+
   return (
     <>
       {/* Page Header Start */}
@@ -54,7 +60,7 @@ const Catvoisepage = () => {
                   <label className="custom-control-label" htmlFor="price-all">
                     All Products
                   </label>
-                  <span className="badge border font-weight-normal">{categories.length}</span>
+                  <span className="badge border font-weight-normal">{totalProductsLength}</span>
                 </div>
 
                 {categories.map((category,index) => (
@@ -62,6 +68,7 @@ const Catvoisepage = () => {
                     key={index}
                     className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3"
                   >
+                  
                     <input
                       type="checkbox"
                       className="custom-control-input"

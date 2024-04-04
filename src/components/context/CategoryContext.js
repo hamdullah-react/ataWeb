@@ -24,7 +24,8 @@ export const CategoryProvider = ({ children }) => {
     const handleCategorySelect = (categoryId) => {
       setSelectedCategory(categoryId);
     };
-  
+
+    
     // Function to handle search input change
     const handleSearchInputChange = (event) => {
       setSearchQuery(event.target.value);
@@ -42,6 +43,8 @@ export const CategoryProvider = ({ children }) => {
             product.name.toLowerCase().includes(searchQuery.toLowerCase())
           )
         );
+
+        
   
   const contextValues = {
     selectedCategory,
@@ -50,7 +53,6 @@ export const CategoryProvider = ({ children }) => {
     handleSearchInputChange,
     filteredProducts
   };
-
   return (
     <CategoryContext.Provider value={contextValues}>
       {children}
