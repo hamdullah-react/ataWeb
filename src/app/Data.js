@@ -4,12 +4,9 @@ export const categories = [
       id: 1,
       name: "Camera Polls",
       data: [
-        { id: 1, name: "Camra Polls", img: "img/categorie/6.png" },
-        { id: 2, name: "", img: "img/categorie/112.png" },
-
-
-        { id: 3, name: "17CM POLL", img: "img/categorie/camerapolls/1.png" },
-        { id: 3, name: "Camra Polls", img: "img/categorie/camerapolls/2.png" },
+      
+        { id: 1, name: "17CM POLL", img: "img/categorie/camerapolls/1.png" },
+        { id: 2, name: "Camra Polls", img: "img/categorie/camerapolls/2.png" },
         { id: 3, name: "JUNCTION BOXES", img: "img/categorie/camerapolls/3.png" },
         
      
@@ -76,6 +73,7 @@ export const categories = [
         { id: 5, name: "BALLOON 8MP", img: "img/categorie/connecter/5.png" },
         { id: 6, name: "BNC SPRING ", img: "img/categorie/connecter/6.png" },
         { id: 7, name: "CRIMPING TOOLS ", img: "img/categorie/connecter/7.png" },
+        { id: 8, name: "CAT 7 CONNECTER METAL", img: "img/categorie/connecter/8.png" },
       
       ],
     },
