@@ -16,7 +16,7 @@ export const categories = [
       id: 2,
       name: "Cables",
       data: [
-        { id: 1, name: "Cables", img: "img/categorie/1.png" },
+        { id: 1, name: "DC CABLE MALE , DC CABLE FEMALE", img: "img/categorie/cable/1.png" },
         { id: 2, name: "Cables", img: "img/categorie/2.png" },
         { id: 3, name: "Cables", img: "img/categorie/4.png" },
         { id: 3, name: "Cables", img: "img/categorie/114.png" },
@@ -74,6 +74,8 @@ export const categories = [
         { id: 6, name: "BNC SPRING ", img: "img/categorie/connecter/6.png" },
         { id: 7, name: "CRIMPING TOOLS ", img: "img/categorie/connecter/7.png" },
         { id: 8, name: "CAT 7 CONNECTER METAL", img: "img/categorie/connecter/8.png" },
+        { id: 9, name: "CAT6 CONNECTER", img: "img/categorie/connecter/9.png" },
+        { id: 10, name: "DC CONNECTER MALE , DC CONNECTER FEMALE", img: "img/categorie/connecter/10.png" },
       
       ],
     },
