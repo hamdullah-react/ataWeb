@@ -1,13 +1,14 @@
+
 import React from "react";
 
-const AllproductModal = ({product}) => {
-  
+const AllproductModal = () => {
+
   return (
     <>
       <>
         {/* Button trigger modal */}
-        <span
-          type="button"
+        <span 
+             type="button"
           className="btn btn-primary w-[100%] flex justify-between"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
@@ -56,7 +57,7 @@ const AllproductModal = ({product}) => {
                       </div>
                       <div className="col-lg-7 pb-5">
                         <h3 className="font-weight-semi-bold">
-                          Colorful Stylish Shirt
+                        {/* {product.name} */}
                         </h3>
 
                         <h3 className="font-weight-semi-bold mb-4"></h3>
