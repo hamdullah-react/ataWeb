@@ -38,7 +38,7 @@ const AllProducts = () => {
                       />
                     </div>
                     <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                      <h6 className="text-truncate mb-3">{product.name}</h6>
+                      <h6 className="text-truncate mb-3 uppercase">{product.name}</h6>
                     </div>
                     <div className="w-[100%] card-footer d-flex justify-content-between bg-light border">
                       <span className="btn btn-sm text-dark p-0 w-[100%]">

@@ -36,6 +36,14 @@ export const categories = [
         { id: 10, name: "", img: "img/categorie/110.png" },
         { id: 11, name: "", img: "img/categorie/111.png" },
         { id: 12, name: "", img: "img/categorie/113.png" },
+
+        { id: 13, name: "KVM 120 Meter", img: "img/categorie/devices/1.png" },
+        { id: 14, name: "KVM 200 Meter", img: "img/categorie/devices/2.png" },
+        { id: 15, name: "HDMI SPLITTER ", img: "img/categorie/devices/3.png" },
+        { id: 16, name: "mouse", img: "img/categorie/devices/4.png" },
+        { id: 17, name: "HDMI extender 30 METER ", img: "img/categorie/devices/5.png" },
+
+
         
         
       ],
@@ -46,6 +54,16 @@ export const categories = [
       data: [
         { id: 1, name: "Power Supply", img: "img/categorie/5.png" },
         { id: 1, name: "Power Supply", img: "img/categorie/3.png" },
+      ],
+    },
+    {
+      id: 5,
+      name: "Connecter",
+      data: [
+        { id: 1, name: "BNC Spring", img: "img/categorie/connecter/1.png" },
+        { id: 1, name: "BNC Crimping", img: "img/categorie/connecter/2.png" },
+        { id: 1, name: "CAT6 TO BNC BALOON", img: "img/categorie/connecter/3.png" },
+      
       ],
     },
   ];

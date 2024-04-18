@@ -1,8 +1,30 @@
+'use client'
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "./Dropdown";
+import { categories } from "../../app/Data"; 
+import SearchDropDown from "./SearchDropDown";
 
 function NaveBar() {
+
+
+
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredCategories, setFilteredCategories] = useState(categories);
+
+  // Function to handle search input changes
+  const handleSearchInputChange = (e) => {
+    setSearchInput(e.target.value);
+    filterCategories(e.target.value);
+  };
+
+  // Function to filter categories and items based on search input
+  const filterCategories = (input) => {
+    const filtered = categories.filter((category) =>
+      category.name.toLowerCase().includes(input.toLowerCase())
+    );
+    setFilteredCategories(filtered);
+  };
   return (
     <>
       <>
@@ -56,20 +78,24 @@ function NaveBar() {
               </a>
             </div>
             <div className="col-lg-6 col-6 text-left">
-              {/* <form action="">
+              <form action="">
                 <div className="input-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Search for products"
-                  />
+                <input
+              type="text"
+              className="form-control"
+              placeholder="Search for products"
+              value={searchInput}
+              onChange={handleSearchInputChange}
+            />
                   <div className="input-group-append">
                     <span className="input-group-text bg-transparent text-primary">
                       <i className="fa fa-search" />
                     </span>
                   </div>
                 </div>
-              </form> */}
+              </form>
+              {/* Render the SearchDropdown only if there's search input */}
+        {searchInput && <SearchDropDown categories={filteredCategories} />}
             </div>
             {/* <div className="col-lg-3 col-6 text-right">
               <a href="" className="btn border">
