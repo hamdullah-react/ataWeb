@@ -1,20 +1,26 @@
+"use client"
+import React, { useState } from "react";
 
-import React from "react";
+const AllproductModal = ({product}) => {
 
-const AllproductModal = () => {
+const [data, setdata] = useState(null);
 
+const preivwData  = ()=>{
+  setdata(product)
+  console.log('firstcccccccccc',product)
+}
   return (
     <>
-      <>
-        {/* Button trigger modal */}
-        <span 
-             type="button"
+    
+        <span
+          type="button"
           className="btn btn-primary w-[100%] flex justify-between"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
+          onClick={preivwData}
         >
-           <i className="fas fa-eye text-primary mr-1 mt-1" />
-         View Detail
+          <i className="fas fa-eye text-primary mr-1 mt-1" />
+          View Detail
         </span>
         {/* Modal */}
         <div
@@ -46,18 +52,16 @@ const AllproductModal = () => {
                     <div className="row px-xl-5">
                       <div className="col-lg-5 pb-5">
                         <div className=" border">
-                        
-                            <img
-                              className="w-100 h-100"
-                              src="img/1.jpeg"
-                              alt="Image"
-                            />
-                          
+                          <img
+                            className="w-100 h-100"
+                            src="img/1.jpeg"
+                            alt="Image"
+                          />
                         </div>
                       </div>
                       <div className="col-lg-7 pb-5">
                         <h3 className="font-weight-semi-bold">
-                        {/* {product.name} */}
+                          {product?.name}
                         </h3>
 
                         <h3 className="font-weight-semi-bold mb-4"></h3>
@@ -87,7 +91,7 @@ const AllproductModal = () => {
             </div>
           </div>
         </div>
-      </>
+    
     </>
   );
 };

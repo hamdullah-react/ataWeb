@@ -1,12 +1,12 @@
-'use client'
 import React from "react";
 import Image from "next/image";
 import AllproductModal from "./AllproductModal";
 import { categories } from "../../app/Data";
 import Modalbutton from "./Modalbutton";
+import Link from "next/link";
+import bgimage from '../../../public/img/productbg.jpg'
 
 const AllProducts = () => {
-
   return (
     <>
       <div className="container-fluid pt-5">
@@ -21,12 +21,22 @@ const AllProducts = () => {
 
             <div className="row px-xl-5 pb-3 mt-4">
               {cat.data.map((product, index) => (
-                <div key={index} className="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div key={index}   className="col-lg-3 col-md-6 col-sm-12 pb-1 ">
+                  <Link
+                  
+                     style={{textDecoration:'none'}}
+                     href={{
+                      pathname: "/detail",
+                      query: { data: JSON.stringify(product) },
+                    }}
+                  >
                   <div
-                    style={{ border: "2px solid red" }}
+                     style={{backgroundImage: `url(${bgimage.src})`,backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center',borderRadius:'20px'}}
                     className="card product-item border-0 mb-4"
                   >
-                    <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <div 
+                   
+                    className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                       <Image
                         src={`/${product.img}`}
                         alt={product.name}
@@ -34,15 +44,16 @@ const AllProducts = () => {
                         height={400}
                         layout="responsive"
                       />
-                    </div>
-                    <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                      <h6 className="text-truncate mb-3 uppercase">
+                          <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                      <h6 className="text-truncate mb-3 uppercase text-white">
                         {product.name}
                       </h6>
                     </div>
-                 
-                 <Modalbutton/>
+                    </div>
+                
+
                   </div>
+                    </Link>
                 </div>
               ))}
             </div>

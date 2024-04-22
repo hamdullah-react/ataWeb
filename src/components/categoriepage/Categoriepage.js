@@ -37,31 +37,38 @@ const page = () => {
 
         <div>
           <div className="row px-xl-5 pb-3 mt-4">
-            {receivedObject.data.map((product) => (
-              <div
-                key={product.id}
-                className="col-lg-3 col-md-6 col-sm-12 pb-1"
-              >
-                <div className="card product-item border-0 mb-4">
-                  <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <Image
-                      src={`/${product.img}`}
-                      alt={product.name}
-                      width={400}
-                      height={600}
-                      layout="responsive"
-                    />
-                  </div>
-                  <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 className="text-truncate mb-3">{product.name}</h6>
-                  </div>
-                  <div className="w-[100%] card-footer d-flex justify-content-between bg-light border">
-                    <span className="btn btn-sm text-dark p-0 w-[100%]">
-                      <AllproductModal product={product} />
-                    </span>
-                  </div>
-                </div>
+            {receivedObject.data.map((product,index) => (
+            <div key={index} className="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <Link
+               style={{textDecoration:'none'}}
+               href={{
+                pathname: "/detail",
+                query: { data: JSON.stringify(product) },
+              }}
+            >
+            <div
+              style={{ border: "2px solid red" }}
+              className="card product-item border-0 mb-4"
+            >
+              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                <Image
+                  src={`/${product.img}`}
+                  alt={product.name}
+                  width={500}
+                  height={400}
+                  layout="responsive"
+                />
+                    <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                <h6 className="text-truncate mb-3 uppercase">
+                  {product.name}
+                </h6>
               </div>
+              </div>
+          
+
+            </div>
+              </Link>
+          </div>
             ))}
           </div>
         </div>
