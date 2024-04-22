@@ -15,11 +15,11 @@ const LoadingPage = () => {
   }, []);
 
   return (
-    <div style={{  display: showLoading ? 'flex' : 'none',  justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh', position: 'fixed', background: 'black', zIndex: '999999' }}>
+    <div style={{ display: showLoading ? 'flex' : 'none', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh', position: 'fixed', background: 'black', zIndex: '999999' }}>
       <div className='text-center'>
 
-      <p className='loading '>Wellcom to</p>
-      <h1 className='loading'> M G S S</h1>
+        <p className='loading '>Wellcom to</p>
+        <h1 className='loading'> M G S S</h1>
       </div>
     </div>
   );
