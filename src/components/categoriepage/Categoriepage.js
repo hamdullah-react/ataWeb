@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React from "react";
+import bgimage from "../../../public/img/bgimages.jpg";
 
 const page = () => {
   const searchParams = useSearchParams();
@@ -12,7 +13,7 @@ const page = () => {
   console.log("first data", receivedObject);
   return (
     <>
-      <div className="container-fluid bg-secondary mb-5">
+      <div className="container-fluid  mb-5">
         <div
           className="d-flex flex-column align-items-center justify-content-center"
           style={{ minHeight: 300 }}
@@ -47,10 +48,17 @@ const page = () => {
               }}
             >
             <div
-              style={{ border: "2px solid red" }}
+                  style={{
+                    backgroundImage: `url(${bgimage.src})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    borderRadius: "20px",
+                    height:'auto'
+                  }}
               className="card product-item border-0 mb-4"
             >
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+              <div style={{borderRadius: "20px", }}  className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                 <Image
                   src={`/${product.img}`}
                   alt={product.name}

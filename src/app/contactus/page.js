@@ -4,7 +4,7 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <div className="container-fluid bg-secondary mb-5">
+      <div className="container-fluid mb-5">
         <div
           className="d-flex flex-column align-items-center justify-content-center"
           style={{ minHeight: 300 }}

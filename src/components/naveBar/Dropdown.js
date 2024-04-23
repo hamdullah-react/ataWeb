@@ -25,7 +25,7 @@ const Dropdown = () => {
         className="menu"
       >
         <motion.button
-        className="hover:text-[black] nav-link shadow-none d-flex align-items-center justify-content-between bg-primary text-black w-100"
+        className="hover:text-[black] nav-link shadow-none d-flex align-items-center justify-content-between bg-[#28a745] text-black w-100"
           whileTap={{ scale: 0.97 }}
           onClick={() => setIsOpen(!isOpen)}
           style={{ height: 65, marginTop: "-1px", padding: "0 30px" }}

@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import AllproductModal from "../allproducts/AllproductModal";
 import {categories} from '../../app/Data'
 import { useCategoryContext } from "../../components/context/CategoryContext";
+import Link from "next/link";
+import bgimage from "../../../public/img/bgimages.jpg";
 
 const Catvoisepage = () => {
     const {
@@ -22,7 +24,7 @@ const Catvoisepage = () => {
   return (
     <>
       {/* Page Header Start */}
-      <div className="container-fluid bg-secondary mb-5">
+      <div className="container-fluid  mb-5">
         <div
           className="d-flex flex-column align-items-center justify-content-center"
           style={{ minHeight: 300 }}
@@ -32,7 +34,7 @@ const Catvoisepage = () => {
           </h1>
           <div className="d-inline-flex">
             <p className="m-0">
-              <a href="">Home</a>
+              <Link href="/products">Home</Link>
             </p>
             <p className="m-0 px-2">-</p>
             <p className="m-0">Shop</p>
@@ -115,25 +117,40 @@ const Catvoisepage = () => {
               </div>
               {filteredProducts.map((product,index) => (
                  <div key={index} className="col-lg-3 col-md-6 col-sm-12 pb-1">
-                 <div className="card product-item border-0 mb-4">
-                   <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                     <Image
-                       src={`/${product.img}`}
-                       alt={product.name}
-                       width={400}
-                       height={600}
-                       layout="responsive"
-                     />
-                   </div>
-                   <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                     <h6 className="text-truncate mb-3">{product.name}</h6>
-                   </div>
-                   <div className="w-[100%] card-footer d-flex justify-content-between bg-light border">
-                     <span className="btn btn-sm text-dark p-0 w-[100%]">
-                       <AllproductModal product={product}/>
-                     </span>
-                   </div>
-                 </div>
+              <Link
+                    style={{ textDecoration: "none" }}
+                    href={{
+                      pathname: "/detail",
+                      query: { data: JSON.stringify(product) },
+                    }}
+                  >
+                    <div
+                      style={{
+                        backgroundImage: `url(${bgimage.src})`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        borderRadius: "20px",
+                        height:'auto'
+                      }}
+                      className="card product-item border-0 mb-4"
+                    >
+                      <div  style={{ textDecoration: "none",borderRadius: "20px", }} className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <Image
+                          src={`/${product.img}`}
+                          alt={product.name}
+                          width={500}
+                          height={400}
+                          layout="responsive"
+                        />
+                        <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                          <h6 className="text-truncate mb-3 uppercase">
+                            {product.name}
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
                </div>
               ))}
             </div>
