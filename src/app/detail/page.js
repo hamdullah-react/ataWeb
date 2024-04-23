@@ -1,13 +1,12 @@
-import ProductDetail from '@/components/allproducts/productDetail'
-import React, { Suspense } from 'react'
+import ProductDetail from "@/components/allproducts/ProductDetail";
+import React, { Suspense } from "react";
 
 const page = () => {
   return (
     <Suspense>
-
-        <ProductDetail/>
+      <ProductDetail />
     </Suspense>
-  )
-}
+  );
+};
 
-export default page
+export default page;
