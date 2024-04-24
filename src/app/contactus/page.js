@@ -14,7 +14,7 @@ const page = () => {
           </h1>
           <div className="d-inline-flex">
             
-              <Link href="/">Home</Link>
+              <Link  href="/">Home</Link>
            
             <p className="m-0 px-2">-</p>
             <p className="m-0">Contact Us</p>
@@ -81,7 +81,7 @@ const page = () => {
                 </div>
                 <div className="mt-2">
                   <button
-                    className="btn btn-primary py-2 px-4"
+                    className="btn bg-[green] text-white py-2 px-4"
                     type="submit"
                     id="sendMessageButton"
                   >

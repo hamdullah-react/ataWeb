@@ -13,7 +13,10 @@ const ProductDetail = () => {
   return (
     <>
   {/* Page Header Start */}
-  <div className="container-fluid  mb-5">
+
+
+
+  <div className="container-fluid  mb-5" >
     <div
       className="d-flex flex-column align-items-center justify-content-center"
       style={{ minHeight: 300 }}
@@ -30,7 +33,7 @@ const ProductDetail = () => {
   </div>
   {/* Page Header End */}
   {/* Shop Detail Start */}
-  <div className="container-fluid py-5">
+  <div className="container-fluid py-5" >
     <div className="row px-xl-5">
       <div className="col-lg-5 pb-5">
   
@@ -55,6 +58,7 @@ const ProductDetail = () => {
   </div>
   </div>
   {/* Shop Detail End */}
+
 </>
 
   )

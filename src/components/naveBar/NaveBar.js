@@ -11,17 +11,22 @@ function NaveBar() {
 
   // Function to handle search input changes
   const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value);
-    filterCategories(e.target.value);
+    const input = e.target.value;
+    setSearchInput(input);
+    filterCategories(input);
   };
 
   // Function to filter categories and items based on search input
   const filterCategories = (input) => {
-    const filtered = categories.filter((category) =>
-      category.name.toLowerCase().includes(input.toLowerCase())
-    );
+    const filtered = categories.map((category) => ({
+      ...category,
+      data: category.data.filter((item) =>
+        item.name.toLowerCase().includes(input.toLowerCase())
+      ),
+    })).filter((category) => category.data.length > 0);
     setFilteredCategories(filtered);
   };
+
   return (
     <>
       <>
@@ -73,8 +78,12 @@ function NaveBar() {
                   MGSS
                 </h1>
               </Link>
+
+
             </div>
-            <div className="col-lg-6 col-6 text-left">
+
+
+            {/* <div className="col-lg-6 col-6 text-left">
               <form action="">
                 <div className="input-group">
                   <input
@@ -91,11 +100,14 @@ function NaveBar() {
                   </div>
                 </div>
               </form>
-              {/* Render the SearchDropdown only if there's search input */}
+      
               {searchInput && (
                 <SearchDropDown categories={filteredCategories} />
               )}
-            </div>
+            </div> */}
+
+
+
             {/* <div className="col-lg-3 col-6 text-right">
               <a href="" className="btn border">
                 <i className="fas fa-heart text-primary" />
@@ -118,14 +130,14 @@ function NaveBar() {
               </div>
               <div className="col-lg-9">
                 <nav className="navbar navbar-expand-lg  navbar-light py-3 py-lg-0 px-0">
-                  <a href="" className="text-decoration-none d-block d-lg-none">
+                  <Link href="" className="text-decoration-none d-block d-lg-none">
                     <h1 className="m-0 display-5 font-weight-semi-bold">
-                      <span className="text-primary font-weight-bold border px-3 mr-1">
+                      {/* <span className="text-primary font-weight-bold border px-3 mr-1">
                         M
-                      </span>
-                      GSS
+                      </span> */}
+                     MGSS
                     </h1>
-                  </a>
+                  </Link>
                   <div
                     className=" navbar-collapse justify-content-between"
                     id="navbarCollapse"

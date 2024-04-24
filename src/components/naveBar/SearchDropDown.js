@@ -1,23 +1,32 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import bgimage from "../../../public/img/bgimages.jpg";
+import AllproductModal from "../allproducts/AllproductModal";
 
 function SearchDropDown({ categories }) {
-
   return (
-    <div className="dropdown-menu show" style={{ display: "block" }}>
+    <div className="dropdown-menu show overflow-y-scroll" style={{height:'20vh',width:'100%', display: "block" }}>
       {categories.map((category) => (
         <div key={category.id} className="dropdown-item">
-          {/* <h6>{category.name}</h6> */}
-          <div className="row ">
-            {category.data.map((item) => (
-              <div key={item.id} className="col-md-12">
+          {category.data.map((product) => (
+            <div key={product.id} className="py-1">
+              <Link
+                style={{ textDecoration: "none" }}
+                href={{
+                  pathname: "/detail",
+                  query: { data: JSON.stringify(product) },
+                }}
+                className="text-[13px] md:text-[20px]"  
+              >
+    
+                {product.name}
                 
-                <Image width={100} height={100} src={`/${item.img}`} alt={item.name} className="img-fluid" />
-                <h1>{item.name}</h1>
-                
-              </div>
-            ))}
-          </div>
+              </Link>
+          
+              <hr/>
+            </div>
+          ))}
         </div>
       ))}
     </div>
