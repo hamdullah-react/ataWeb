@@ -21,7 +21,7 @@ const AllProducts = () => {
 
             <div className="row px-xl-5 pb-3 mt-4">
               {cat.data.map((product, index) => (
-                <div key={index} className="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div key={index} className="col-lg-3 col-md-6 col-6 pb-1">
                   <Link
                     style={{ textDecoration: "none" }}
                     href={{
