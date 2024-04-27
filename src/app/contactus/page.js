@@ -118,7 +118,7 @@ const page = () => {
               </p>
               <p className="mb-2">
                 <i className="fa fa-map-marker-alt text-primary mr-3" />
-                Mustafa Mohd.Abdul Noor Bldg.Behind Golden Square Hotel Nakhee
+                Mustafa Mohd.Abdul Noor Bldg.Behind Golden Square Hotel Nakheel
                 Road,Deira,Dubai - U.A.E.
               </p>
             </div>
