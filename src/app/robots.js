@@ -1,16 +1,10 @@
 export default function robots() {
-    return {
-      rules: [
-        {
-          userAgent: 'Googlebot',
-          allow: ['/'],
-          disallow: ['/private/'],
-        },
-        {
-          userAgent: ['Applebot', 'Bingbot'],
-          disallow: ['/'],
-        },
-      ],
-      sitemap: 'https://www.mgssuae.com/sitemap.xml',
-    }
+  return {
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: '/private/',
+    },
+    sitemap: 'https://www.mgssuae.com/sitemap.xml',
   }
+}
