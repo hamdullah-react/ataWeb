@@ -3,6 +3,7 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow:'',
     },
     sitemap: 'https://www.mgssuae.com/sitemap.xml',
   }
