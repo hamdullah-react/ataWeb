@@ -5,7 +5,16 @@ import React from "react";
 
 
 
+export const metadata = {
+  title: "About MGSS - Your Trusted Security Solutions Provider",
+  description: "Learn more about Mohammad Ghulam Security Solution (MGSS) - a leading provider of security solutions including security camera accessories such as cables, connectors, devices, poles, adapters, and power supplies. Discover our commitment to customer satisfaction, innovation, and excellence. Find out why MGSS is your trusted partner for all your security needs.",
+};
+
+
+
 const Aboutus = () => {
+
+  
   
   const images = [
     { src: "/img/4.jpeg", alt: "Image 1" },

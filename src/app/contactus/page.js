@@ -1,6 +1,13 @@
 import Link from "next/link";
 import React from "react";
 
+
+export const metadata = {
+  title: "Contact Us - Mohammad Ghulam Security Solution (MGSS)",
+  description: "Get in touch with MGSS - a leading provider of security solutions including security camera accessories such as cables, connectors, devices, poles, adapters, and power supplies. Contact Ghulam Haider, the General Manager, for any queries regarding our products or services.",
+};
+
+
 const page = () => {
   return (
     <>

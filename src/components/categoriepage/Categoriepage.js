@@ -1,16 +1,14 @@
-"use client";
-import AllproductModal from "@/components/allproducts/AllproductModal";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import React from "react";
 import bgimage from "../../../public/img/bgimages.jpg";
 
-const page = () => {
-  const searchParams = useSearchParams();
-  const dataString = searchParams.get("data");
-  const receivedObject = dataString ? JSON.parse(dataString) : {};
-  console.log("first data", receivedObject);
+const page = ({receivedObject}) => {
+  // const searchParams = useSearchParams();
+  // const dataString = searchParams.get("data");
+  // const receivedObject = dataString ? JSON.parse(dataString) : {};
+  // console.log("first data dddddddddddddd", receivedObject);
   return (
     <>
       <div className="container-fluid  mb-5">
