@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import AllproductModal from "../allproducts/AllproductModal";
 import {categories} from '../../app/Data'
 import { useCategoryContext } from "../../components/context/CategoryContext";
 import Link from "next/link";

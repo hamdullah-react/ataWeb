@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import AllproductModal from "./AllproductModal";
+
 import { categories } from "../../app/Data";
-import Modalbutton from "./Modalbutton";
+
 import Link from "next/link";
 import bgimage from "../../../public/img/bgimages.jpg";
 

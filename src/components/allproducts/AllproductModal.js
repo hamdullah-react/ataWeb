@@ -7,7 +7,7 @@ const [data, setdata] = useState(null);
 
 const preivwData  = ()=>{
   setdata(product)
-  console.log('firstcccccccccc',product)
+ 
 }
   return (
     <>
