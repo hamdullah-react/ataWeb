@@ -35,17 +35,17 @@ function NaveBar() {
           <div className="row bg-secondary py-2 px-xl-5">
             <div className="col-lg-6 d-none d-lg-block">
               <div className="d-inline-flex align-items-center">
-                <a className="text-dark" href="">
+                <Link className="text-dark" href="">
                   FAQs
-                </a>
+                </Link>
                 <span className="text-muted px-2">|</span>
-                <a className="text-dark" href="">
+                <Link className="text-dark" href="">
                   Help
-                </a>
+                </Link>
                 <span className="text-muted px-2">|</span>
-                <a className="text-dark" href="">
+                <Link className="text-dark" href="">
                   Support
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-6 text-center text-lg-right">
@@ -149,6 +149,7 @@ function NaveBar() {
                       <Link href="products" className="nav-item nav-link">
                         All Products
                       </Link>
+                      
                       <Link href="/aboutus" className="nav-item nav-link">
                         About Us
                       </Link>
