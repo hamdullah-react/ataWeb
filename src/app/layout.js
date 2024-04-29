@@ -8,18 +8,18 @@ import NaveBar from "@/components/naveBar/NaveBar";
 import { CategoryProvider } from "@/components/context/CategoryContext";
 import Script from "next/script";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "MGSS - Quality Products for Every Need",
-  description: "Discover a diverse selection of high-quality products at MGSS. From camera polls to cables, devices, adaptors, and connectors, find everything you need for your business or personal projects. Shop now!",
+  description:
+    "Discover a diverse selection of high-quality products at MGSS. From camera polls to cables, devices, adaptors, and connectors, find everything you need for your business or personal projects. Shop now!",
   verification: {
-    google: 'google',
-    yandex: 'yandex',
-    yahoo: 'yahoo',
+    google: "google",
+    yandex: "yandex",
+    yahoo: "yahoo",
     other: {
-      me: ['my-email', 'my-link'],
+      me: ["my-email", "my-link"],
     },
   },
 };
@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
 
       <body className={inter.className}>
         <LoadingPage />
+
         <CategoryProvider>
           <NaveBar />
         </CategoryProvider>

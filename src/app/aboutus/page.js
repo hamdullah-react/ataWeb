@@ -31,7 +31,7 @@ const Aboutus = () => {
           style={{ minHeight: 300 }}
         >
           <h1 className="font-weight-semi-bold text-uppercase mb-3">
-            Contact Us
+          About Us
           </h1>
           <div className="d-inline-flex">
             <p className="m-0">

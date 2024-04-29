@@ -147,6 +147,7 @@ const Catvoisepage = () => {
                           <h6 className="text-truncate mb-3 uppercase">
                             {product.name}
                           </h6>
+                        <p> {product.description}</p>
                         </div>
                       </div>
                     </div>
