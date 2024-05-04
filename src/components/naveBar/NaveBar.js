@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Dropdown from "./Dropdown";
 import { categories } from "../../app/Data";
 import SearchDropDown from "./SearchDropDown";
+import Mobilenavebar from "./Mobilenavebar";
 
 function NaveBar() {
   const [searchInput, setSearchInput] = useState("");
@@ -31,7 +32,7 @@ function NaveBar() {
     <>
       <>
         {/* Topbar Start */}
-        <div className="container-fluid">
+        <div className="container-fluid d-none d-lg-block">
           <div className="row bg-secondary py-2 px-xl-5">
             <div className="col-lg-6 d-none d-lg-block">
               <div className="d-inline-flex align-items-center">
@@ -123,7 +124,7 @@ function NaveBar() {
         {/* Topbar End */}
         <>
           {/* Navbar Start */}
-          <div className="container-fluid mb-5">
+          <div className="container-fluid mb-5 d-none d-lg-block">
             <div className="row border-top px-xl-5">
               <div className="col-lg-3 d-none d-lg-block">
                 <Dropdown />
@@ -227,7 +228,7 @@ function NaveBar() {
             </div>
           </div>
           {/* Navbar End */}
-          <></>
+          <Mobilenavebar/>
         </>
       </>
     </>

@@ -14,7 +14,7 @@ const itemVariants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
-const Dropdown = () => {
+const Dropdown = ({toggleNavbar}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -69,6 +69,7 @@ const Dropdown = () => {
         >
           {categories.map((menu, index) => (
             <Link
+            onClick={toggleNavbar}
               key={index}
               href={{
                 pathname: "/categoriepage1",
