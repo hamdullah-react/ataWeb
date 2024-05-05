@@ -5,6 +5,7 @@ import Dropdown from "./Dropdown";
 import { categories } from "../../app/Data";
 import SearchDropDown from "./SearchDropDown";
 import Mobilenavebar from "./Mobilenavebar";
+import Whatsapp from "../whatsapp/Whatsapp";
 
 function NaveBar() {
   const [searchInput, setSearchInput] = useState("");
@@ -158,6 +159,13 @@ function NaveBar() {
                       <Link href="/contactus" className="nav-item nav-link">
                         Contact
                       </Link>
+
+                      
+                      <span className="flex justify-center items-center ml-5 border-2 border-white px-2 bg-[#9af09a] text-black rounded-[20px]">
+
+                      <Whatsapp/>
+                      </span>
+
                     </div>
                   </div>
                 </nav>

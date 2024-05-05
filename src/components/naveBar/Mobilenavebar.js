@@ -4,6 +4,7 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri"; // Importing menu and 
 import { IconContext } from "react-icons"; // Importing the IconContext for customizing icon styles
 import Link from "next/link";
 import Dropdown from "./Dropdown";
+import Whatsapp from "../whatsapp/Whatsapp";
 
 const Mobilenavebar = () => {
   const navItems = [
@@ -81,36 +82,47 @@ const Mobilenavebar = () => {
         </div>
       </div>
 
-      <div className="d-lg-none w-[100%] z-50 bg-white">
+      <div className="d-lg-none w-[100%] z-50 bg-white px-3">
         <AnimatePresence>
           {isToggled && (
-            <motion.div
-              className="navbar"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={navContainer}
-            >
-              <motion.ul
-                className="navList"
+            <>
+              <motion.div
+                className="navbar"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                variants={navList}
+                variants={navContainer}
               >
-                {navItems.map((item) => (
-                  <motion.li className="nav-item py-3" variants={navItem} key={item.name}>
-                    {item.dropdown ? (
-                      <Dropdown toggleNavbar={toggleNavbar}/> // Render dropdown component
-                    ) : (
-                      <Link onClick={toggleNavbar} href={item.url}>
-                        <p>{item.name}</p>
-                      </Link>
-                    )}
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
+                <motion.ul
+                  className="navList"
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={navList}
+                >
+                  <span className=" border-2 border-white p-2 bg-[#9af09a] text-black rounded-[20px]">
+                    <Whatsapp />
+                  </span>
+                  {navItems.map((item) => (
+                    <motion.li
+                      className="nav-item py-2"
+                      variants={navItem}
+                      key={item.name}
+                    >
+                      {item.dropdown ? (
+                        <>
+                          <Dropdown toggleNavbar={toggleNavbar} />
+                        </>
+                      ) : (
+                        <Link onClick={toggleNavbar} href={item.url}>
+                          <p>{item.name}</p>
+                        </Link>
+                      )}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
