@@ -94,18 +94,18 @@ const Mobilenavebar = () => {
                 variants={navContainer}
               >
                 <motion.ul
-                  className="navList"
+                  className="navList "
                   initial="hidden"
                   animate="visible"
                   exit="hidden"
                   variants={navList}
                 >
-                  <span className=" border-2 border-white p-2 bg-[#9af09a] text-black rounded-[20px]">
+                  <span className="border-2 border-white p-2 bg-[#9af09a] text-black rounded-[20px]">
                     <Whatsapp />
                   </span>
                   {navItems.map((item) => (
                     <motion.li
-                      className="nav-item py-2"
+                      className="nav-item pt-2"
                       variants={navItem}
                       key={item.name}
                     >
