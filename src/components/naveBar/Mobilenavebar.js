@@ -5,6 +5,8 @@ import { IconContext } from "react-icons"; // Importing the IconContext for cust
 import Link from "next/link";
 import Dropdown from "./Dropdown";
 import Whatsapp from "../whatsapp/Whatsapp";
+import Image from "next/image";
+import logo from "../../../public/img/logo.png";
 
 const Mobilenavebar = () => {
   const navItems = [
@@ -73,7 +75,16 @@ const Mobilenavebar = () => {
   return (
     <>
       <div className="d-lg-none">
-        <div className="d-flex justify-end bg-white pr-4 py-3">
+        <div className="d-flex justify-between bg-white px-4 py-3">
+          <Link href="/" className=" text-decoration-none">
+            <Image width={40} height={30} src={logo} />
+            {/* <h1 className="m-0 display-5 font-weight-semi-bold">
+  <span className="text-primary font-weight-bold border px-3 mr-1">
+    
+  </span>
+  MGSS
+</h1> */}
+          </Link>
           <button className="btn " onClick={toggleNavbar}>
             <IconContext.Provider value={{ size: "1.5em" }}>
               {isToggled ? <RiCloseLine /> : <RiMenuLine />}

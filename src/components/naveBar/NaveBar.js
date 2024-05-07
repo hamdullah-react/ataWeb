@@ -6,6 +6,8 @@ import { categories } from "../../app/Data";
 import SearchDropDown from "./SearchDropDown";
 import Mobilenavebar from "./Mobilenavebar";
 import Whatsapp from "../whatsapp/Whatsapp";
+import Image from "next/image";
+import logo from "../../../public/img/logo.png"
 
 function NaveBar() {
   const [searchInput, setSearchInput] = useState("");
@@ -34,7 +36,7 @@ function NaveBar() {
       <>
         {/* Topbar Start */}
         <div className="container-fluid d-none d-lg-block">
-          <div className="row bg-secondary py-2 px-xl-5">
+          {/* <div className="row bg-secondary py-2 px-xl-5">
             <div className="col-lg-6 d-none d-lg-block">
               <div className="d-inline-flex align-items-center">
                 <Link className="text-dark" href="">
@@ -69,16 +71,18 @@ function NaveBar() {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="row align-items-center py-3 px-xl-5">
             <div className="col-lg-3 d-none d-lg-block">
               <Link href="/" className="text-decoration-none">
-                <h1 className="m-0 display-5 font-weight-semi-bold">
-                  {/* <span className="text-primary font-weight-bold border px-3 mr-1">
+
+                <Image width={40} height={30} src={logo}/>
+                {/* <h1 className="m-0 display-5 font-weight-semi-bold">
+                  <span className="text-primary font-weight-bold border px-3 mr-1">
                     
-                  </span> */}
+                  </span>
                   MGSS
-                </h1>
+                </h1> */}
               </Link>
 
 

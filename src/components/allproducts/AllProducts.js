@@ -31,10 +31,10 @@ const AllProducts = () => {
                   >
                     <div
                       style={{
-                        backgroundImage: `url(${bgimage.src})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
+                        // backgroundImage: `url(${bgimage.src})`,
+                        // backgroundRepeat: "no-repeat",
+                        // backgroundSize: "cover",
+                        // backgroundPosition: "center",
                         borderRadius: "20px",
                         height:'auto'
                        
@@ -49,7 +49,7 @@ const AllProducts = () => {
                           height={400}
                           layout="responsive"
                         />
-                        <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <div className="card-body border-left border-right text-center">
                           <h6 className="text-truncate mb-3 uppercase">
                             {product.name}
                           </h6>

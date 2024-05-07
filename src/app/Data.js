@@ -3,32 +3,53 @@ export const categories = [
     id: 1,
     name: "Camera Polls",
     data: [
-      { 
-        id: 1, 
-        name: "17CM POLL", 
-        img: "img/categorie/camerapolls/1.png", 
-        description: "Sturdy 17-centimeter poll for reliable camera mounting." 
+      {
+        id: 1,
+        name: "Universal plastic 1258zj wall mounted bracket holder for CCTV IP Camera",
+        img: "img/categorie/camerapolls/1.png",
+        description: "The Universal Plastic 1258ZJ Wall Mounted Bracket Holder is a versatile accessory designed specifically for CCTV IP cameras. Engineered with durable plastic, this bracket ensures reliable support and stability for your camera setup. Its wall-mounted design offers convenient installation options, allowing you to securely mount your CCTV IP camera in optimal positions for surveillance purposes. With its universal compatibility, this bracket accommodates a wide range of CCTV IP camera models, providing flexibility in your security system setup. Whether for home or commercial use, this bracket holder is an essential component for ensuring the effective positioning and functionality of your CCTV IP camera. Trust in its sturdy construction and adaptable design to enhance the performance of your surveillance system."
       },
-      { 
-        id: 2, 
-        name: "Camra Polls", 
-        img: "img/categorie/camerapolls/2.png", 
-        description: "Versatile polls for secure and adjustable camera installation." 
+      {
+        id: 2,
+        name: "FTTH ABS Plastic Box Type Installation 12 24-core Optical Fiber Splice Tray For FTTH Terminal Box Flame retardant thickening",
+        img: "img/categorie/camerapolls/2.png",
+        description: "Upgrade your fiber optic network with the FTTH ABS Plastic Box Type Installation 12 24-core Optical Fiber Splice Tray. Engineered from durable ABS plastic, this splice tray guarantees long-lasting performance and flame retardant protection, ensuring safety in any environment. Tailored for effortless integration into FTTH terminal boxes, this tray accommodates 12 to 24 optical fiber cores, optimizing cable organization and management. Its space-efficient box-type design safeguards delicate fiber optic components while maximizing installation flexibility. With its flame retardant properties and robust construction, this splice tray delivers enhanced safety and reliability, minimizing fire risks and ensuring consistent network stability. Perfect for residential or commercial installations, trust in this FTTH splice tray for seamless connectivity and enduring performance."
       },
-      { 
-        id: 3, 
-        name: "JUNCTION BOXES", 
-        img: "img/categorie/camerapolls/3.png", 
-        description: "Robust junction boxes for organized camera cable connections." 
+      {
+        id: 3,
+        name: "Installation bracket of metal closed circuit TV shell column ring for road monitoring PTZ camera",
+        img: "img/categorie/camerapolls/3.png",
+        description: "Elevate your road monitoring capabilities with this sturdy metal bracket designed specifically for PTZ cameras. Easily installable on poles or columns, this bracket ensures optimal positioning and stability for your CCTV system. Its closed circuit TV shell provides protection against harsh weather conditions, ensuring reliable performance in any environment. Enhance your surveillance infrastructure with this versatile and durable mounting solution."
       },
-      { 
-        id: 4, 
-        name: "L DASH BIG , L DASH SMALL", 
-        img: "img/categorie/camerapolls/4.png", 
-        description: "Durable dash mounts in big and small sizes for convenient camera positioning." 
+      
+      {
+        id: 4,
+        name: "Monitoring Dome Bracket Plastic Ceiling Dome Bracket Concealed Wire Bracket Round Dome Power Supply Concealed Wire Box",
+        img: "img/categorie/camerapolls/4.png",
+        description: "Upgrade your surveillance setup with this versatile plastic bracket designed for monitoring domes. Crafted to seamlessly integrate into ceilings, this bracket provides concealed wire management for a clean and professional installation. Its round dome power supply box ensures wires remain hidden and protected. Enhance your security system with this reliable and practical bracket solution."
       },
+      {
+        id: 5,
+        name: "PTZ monitoring insulation anti-interference bracket ABS plastic wall mounted indoor camera universal bracket CCTV 9.3CM",
+        img: "img/categorie/camerapolls/5.png",
+        description: "Enhance the performance of your indoor surveillance system with this versatile ABS plastic bracket. Designed to minimize interference and ensure insulation, this wall-mounted bracket is compatible with a wide range of PTZ cameras. Its universal design and adjustable features make it easy to install and position cameras for optimal coverage. With a compact size of 9.3CM, this bracket offers a space-saving solution without compromising on stability. Elevate your CCTV setup with this reliable and effective mounting bracket."
+      },
+      {
+        id: 6,
+        name: "Monitoring wall mounted aluminum alloy support camera one support telescopic installation CCTV monitoring system 30-60CM",
+        img: "img/categorie/camerapolls/6.png",
+        description: "Optimize your CCTV monitoring system with this aluminum alloy wall-mounted support. Designed for easy telescopic installation, this support offers versatile camera positioning within a range of 30-60CM. Crafted from durable aluminum alloy, it ensures stability and longevity, providing reliable support for your surveillance cameras. Upgrade your monitoring setup with this practical and adjustable support bracket."
+      }
+      
+      
+      
+    
     ],
   },
+
+
+
+
   {
     id: 2,
     name: "Cables",
@@ -117,72 +138,34 @@ export const categories = [
         img: "img/categorie/adopter&powersupply/2.png", 
         description: "Power supplies with multiple channels and ample capacity for various devices." 
       },
+      
+      { 
+        id: 2, 
+        name: "12V20AH +18CHANNEL  POWER SUPPLY , 12V30AH +18CHANNEL POWER SUPPLY", 
+        img: "img/categorie/adopter&powersupply/4.png", 
+        description: "Power supplies with multiple channels and ample capacity for various devices." 
+      },
+      
+ 
     ],
   },
+
+
+
+
   {
     id: 5,
     name: "Connecter",
     data: [
-      { 
-        id: 1, 
-        name: "BNC Spring", 
-        img: "img/categorie/connecter/1.png", 
-        description: "Spring-type BNC connector for secure and reliable cable connections." 
-      },
-      { 
-        id: 2, 
-        name: "BNC Crimping", 
-        img: "img/categorie/connecter/2.png", 
-        description: "Professional crimping tool for accurately attaching BNC connectors to cables." 
-      },
-      { 
-        id: 3, 
-        name: "CAT6 TO BNC BALOON", 
-        img: "img/categorie/connecter/3.png", 
-        description: "Adapter facilitating seamless connection between CAT6 cables and BNC connectors." 
-      },
-      { 
-        id: 4, 
-        name: "BALLOON 2MP", 
-        img: "img/categorie/connecter/4.png", 
-        description: "BNC balloon connector for 2MP camera installations." 
-      },
-      { 
-        id: 5, 
-        name: "BALLOON 8MP", 
-        img: "img/categorie/connecter/5.png", 
-        description: "BNC balloon connector for 8MP camera installations." 
-      },
-      { 
-        id: 6, 
-        name: "BNC SPRING", 
-        img: "img/categorie/connecter/6.png", 
-        description: "Another variation of spring-type BNC connector ensuring dependable connectivity." 
-      },
-      { 
-        id: 7, 
-        name: "CRIMPING TOOLS", 
-        img: "img/categorie/connecter/7.png", 
-        description: "Comprehensive set of tools for efficient and precise crimping of various connectors." 
-      },
-      { 
-        id: 8, 
-        name: "CAT 7 CONNECTER METAL", 
-        img: "img/categorie/connecter/8.png", 
-        description: "Metal CAT7 connector designed for high-speed data transmission and durability." 
-      },
-      { 
-        id: 9, 
-        name: "CAT6 CONNECTER", 
-        img: "img/categorie/connecter/9.png", 
-        description: "Connector specifically engineered for CAT6 cable connections." 
-      },
-      { 
-        id: 10, 
-        name: "DC CONNECTER MALE, DC CONNECTER FEMALE", 
-        img: "img/categorie/connecter/10.png", 
-        description: "Male and female DC power connectors for hassle-free power supply solutions." 
-      },
+      {
+        id: 1,
+        name: "5.5 * 2.1mm DC male plug connector for CCTV accessories",
+        img: "img/categorie/connecter/1.png",
+        description: "Ensure seamless power connectivity for your CCTV accessories with this 5.5 * 2.1mm DC male plug connector. Designed to provide a reliable power link, this connector is essential for maintaining the functionality of your surveillance equipment. Compatible with various CCTV accessories, it offers versatile compatibility and ease of use. Keep your security system running smoothly with this dependable connector."
+      }
+      
+      
+  
     ],
   },
 ];

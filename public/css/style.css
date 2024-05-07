@@ -65,7 +65,7 @@ body {
   color: #6F6F6F;
   text-align: left;
   background-color: #fff;
-  background-image: url('../../public/img/bodybg1.jpg');
+  background-image: url('../../public/img/bg3.jpg');
   background-size: cover; /* Adjust the background size as needed */
   background-position: center; /* Adjust the background position as needed */
   background-repeat: no-repeat; 
@@ -4377,6 +4377,10 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
+  background-image: url('../../public/img/cardbg9.jpg');
+  background-size: cover; /* Adjust the background size as needed */
+  background-position: center; /* Adjust the background position as needed */
+  background-repeat: no-repeat; 
 }
 
 .card > hr {
@@ -4404,7 +4408,7 @@ input[type="button"].btn-block {
 
 .card-body {
   flex: 1 1 auto;
-  min-height: 1px;
+   height: 20vh;
   padding: 1.25rem;
 }
 
