@@ -31,10 +31,10 @@ const ProductDetail = ({ receivedObject }) => {
       {/* Page Header End */}
       {/* Shop Detail Start */}
       <div className="container-fluid py-5">
-        <div className="row px-xl-5">
+        <div className="row px-xl-5 flex justify-center items-center">
           <div className="col-lg-5 pb-5">
             <div className="carousel-inner border">
-              <div className="carousel-item active">
+              <div className="carousel-item active bg-white rounded-[10px]">
                 <img
                   className="w-100 h-100"
                   src={receivedObject.img}

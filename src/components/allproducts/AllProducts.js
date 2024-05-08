@@ -5,6 +5,7 @@ import { categories } from "../../app/Data";
 
 import Link from "next/link";
 import bgimage from "../../../public/img/bgimages.jpg";
+import AllProductCard from "../allproductcard/AllProductCard";
 
 const AllProducts = () => {
   return (
@@ -29,34 +30,8 @@ const AllProducts = () => {
                       query: { data: JSON.stringify(product) },
                     }}
                   >
-                    <div
-                      style={{
-                        // backgroundImage: `url(${bgimage.src})`,
-                        // backgroundRepeat: "no-repeat",
-                        // backgroundSize: "cover",
-                        // backgroundPosition: "center",
-                        borderRadius: "20px",
-                        height:'auto'
-                       
-                      }}
-                      className="card product-item border-0 mb-4"
-                    >
-                      <div  style={{ textDecoration: "none",borderRadius: "20px", }} className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <Image
-                          src={`/${product.img}`}
-                          alt={product.name}
-                          width={500}
-                          height={400}
-                          layout="responsive"
-                        />
-                        <div className="card-body border-left border-right text-center">
-                          <h6 className="text-truncate mb-3 uppercase">
-                            {product.name}
-                          </h6>
-                          <p> {product.description}</p>
-                        </div>
-                      </div>
-                    </div>
+                    <AllProductCard data={product}/>
+                   
                   </Link>
                 </div>
               ))}

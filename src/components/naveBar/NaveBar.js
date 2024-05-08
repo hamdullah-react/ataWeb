@@ -7,7 +7,8 @@ import SearchDropDown from "./SearchDropDown";
 import Mobilenavebar from "./Mobilenavebar";
 import Whatsapp from "../whatsapp/Whatsapp";
 import Image from "next/image";
-import logo from "../../../public/img/logo.png"
+import logo from "../../../public/img/logo.png";
+import Logo from "../logo/Logo";
 
 function NaveBar() {
   const [searchInput, setSearchInput] = useState("");
@@ -22,12 +23,14 @@ function NaveBar() {
 
   // Function to filter categories and items based on search input
   const filterCategories = (input) => {
-    const filtered = categories.map((category) => ({
-      ...category,
-      data: category.data.filter((item) =>
-        item.name.toLowerCase().includes(input.toLowerCase())
-      ),
-    })).filter((category) => category.data.length > 0);
+    const filtered = categories
+      .map((category) => ({
+        ...category,
+        data: category.data.filter((item) =>
+          item.name.toLowerCase().includes(input.toLowerCase())
+        ),
+      }))
+      .filter((category) => category.data.length > 0);
     setFilteredCategories(filtered);
   };
 
@@ -74,20 +77,8 @@ function NaveBar() {
           </div> */}
           <div className="row align-items-center py-3 px-xl-5">
             <div className="col-lg-3 d-none d-lg-block">
-              <Link href="/" className="text-decoration-none">
-
-                <Image width={40} height={30} src={logo}/>
-                {/* <h1 className="m-0 display-5 font-weight-semi-bold">
-                  <span className="text-primary font-weight-bold border px-3 mr-1">
-                    
-                  </span>
-                  MGSS
-                </h1> */}
-              </Link>
-
-
+              
             </div>
-
 
             {/* <div className="col-lg-6 col-6 text-left">
               <form action="">
@@ -112,8 +103,6 @@ function NaveBar() {
               )}
             </div> */}
 
-
-
             {/* <div className="col-lg-3 col-6 text-right">
               <a href="" className="btn border">
                 <i className="fas fa-heart text-primary" />
@@ -127,21 +116,25 @@ function NaveBar() {
           </div>
         </div>
         {/* Topbar End */}
-        <>
+      
           {/* Navbar Start */}
-          <div className="container-fluid mb-5 d-none d-lg-block">
-            <div className="row border-top px-xl-5">
-              <div className="col-lg-3 d-none d-lg-block">
+          <div className="container-fluid mb-5 d-none d-lg-block h-[30px]">
+            <div className=" row border-top px-xl-5">
+            <Logo />
+              <div className="flex col-lg-3 d-none d-lg-block">
                 <Dropdown />
               </div>
-              <div className="col-lg-9">
+              <div className="col-lg-8">
                 <nav className="navbar navbar-expand-lg  navbar-light py-3 py-lg-0 px-0">
-                  <Link href="" className="text-decoration-none d-block d-lg-none">
+                  <Link
+                    href=""
+                    className="text-decoration-none d-block d-lg-none"
+                  >
                     <h1 className="m-0 display-5 font-weight-semi-bold">
                       {/* <span className="text-primary font-weight-bold border px-3 mr-1">
                         M
                       </span> */}
-                     MGSS
+                      MGSS
                     </h1>
                   </Link>
                   <div
@@ -155,7 +148,7 @@ function NaveBar() {
                       <Link href="products" className="nav-item nav-link">
                         All Products
                       </Link>
-                      
+
                       <Link href="/aboutus" className="nav-item nav-link">
                         About Us
                       </Link>
@@ -164,12 +157,9 @@ function NaveBar() {
                         Contact
                       </Link>
 
-                      
                       <span className="flex justify-center items-center ml-5 border-2 border-white px-2 bg-[#9af09a] text-black rounded-[20px]">
-
-                      <Whatsapp/>
+                        <Whatsapp />
                       </span>
-
                     </div>
                   </div>
                 </nav>
@@ -240,8 +230,8 @@ function NaveBar() {
             </div>
           </div>
           {/* Navbar End */}
-          <Mobilenavebar/>
-        </>
+          <Mobilenavebar />
+        
       </>
     </>
   );

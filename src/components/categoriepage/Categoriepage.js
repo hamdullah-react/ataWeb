@@ -1,10 +1,10 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import bgimage from "../../../public/img/bgimages.jpg";
+import AllProductCard from "../allproductcard/AllProductCard";
 
-const page = ({receivedObject}) => {
+const page = ({ receivedObject }) => {
   // const searchParams = useSearchParams();
   // const dataString = searchParams.get("data");
   // const receivedObject = dataString ? JSON.parse(dataString) : {};
@@ -17,7 +17,7 @@ const page = ({receivedObject}) => {
           style={{ minHeight: 300 }}
         >
           <h1 className="font-weight-semi-bold text-uppercase mb-3">
-          {receivedObject.name} 
+            {receivedObject.name}
           </h1>
           <div className="d-inline-flex">
             <p className="m-0">
@@ -36,46 +36,18 @@ const page = ({receivedObject}) => {
 
         <div>
           <div className="row px-xl-5 pb-3 mt-4">
-            {receivedObject.data.map((product,index) => (
-            <div key={index} className="col-lg-3 col-md-6 col-6 pb-1">
-            <Link
-               style={{textDecoration:'none'}}
-               href={{
-                pathname: "/detail",
-                query: { data: JSON.stringify(product) },
-              }}
-            >
-            <div
-                  style={{
-                    // backgroundImage: `url(${bgimage.src})`,
-                    // backgroundRepeat: "no-repeat",
-                    // backgroundSize: "cover",
-                    // backgroundPosition: "center",
-                    borderRadius: "20px",
-                    height:'auto'
+            {receivedObject.data.map((product, index) => (
+              <div key={index} className="col-lg-3 col-md-6 col-6 pb-1">
+                <Link
+                  style={{ textDecoration: "none" }}
+                  href={{
+                    pathname: "/detail",
+                    query: { data: JSON.stringify(product) },
                   }}
-              className="card product-item border-0 mb-4"
-            >
-              <div style={{borderRadius: "20px", }}  className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <Image
-                  src={`/${product.img}`}
-                  alt={product.name}
-                  width={500}
-                  height={400}
-                  layout="responsive"
-                />
-                    <div className="card-body border-left border-right text-center">
-                <h6 className="text-truncate mb-3 uppercase">
-                  {product.name}
-                </h6>
-                <p> {product.description}</p>
+                >
+                  <AllProductCard data={product} />
+                </Link>
               </div>
-              </div>
-          
-
-            </div>
-              </Link>
-          </div>
             ))}
           </div>
         </div>

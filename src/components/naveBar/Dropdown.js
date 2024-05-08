@@ -45,6 +45,7 @@ const Dropdown = ({toggleNavbar}) => {
           </motion.div>
         </motion.button>
         <motion.ul
+        className="bg-slate-50"
           variants={{
             open: {
               clipPath: "inset(0% 0% 0% 0% round 10px)",

@@ -4374,13 +4374,10 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #fdfdfd;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  background-image: url('../../public/img/cardbg9.jpg');
-  background-size: cover; /* Adjust the background size as needed */
-  background-position: center; /* Adjust the background position as needed */
-  background-repeat: no-repeat; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card > hr {
