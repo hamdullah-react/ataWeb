@@ -23,10 +23,10 @@ export default function AllProductCard({data}) {
             layout="responsive"
           />
           <div className="card-body border-left border-right text-center">
-            <h6 className="font-weight-bold text-truncate mb-3 uppercase">
+            <h6 className="font-weight-bold text-[10px] md:text-[15px] text-truncate mb-3 uppercase">
               {data.name}
             </h6>
-            <p className="overflow-hidden line-clamp-3">
+            <p className="overflow-hidden text-[10px] md:text-[15px] line-clamp-3">
               {data.description}
             </p>
           </div>
