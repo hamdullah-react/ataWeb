@@ -150,9 +150,6 @@ export const categories = [
     ],
   },
 
-
-
-
   {
     id: 5,
     name: "Connecter",
