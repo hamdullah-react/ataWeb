@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
-import "../../public/css/style.css";
+import "../../../public/css/style.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import Footer from "@/components/footer/Footer";
 import LoadingPage from "@/loading";
-import "../app/globals.css";
+import "../../app/globals.css";
+
 import NaveBar from "@/components/naveBar/NaveBar";
 import { CategoryProvider } from "@/components/context/CategoryContext";
 import Script from "next/script";
@@ -40,17 +41,17 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={inter.className}>
-        <LoadingPage />
+      
+          <LoadingPage />
 
-        <CategoryProvider>
-          <NaveBar />
-        </CategoryProvider>
+          <CategoryProvider>
+            <NaveBar />
+          </CategoryProvider>
 
-        {children}
+          {children}
+          <Footer />
+       
 
-        <Footer />
-
-    
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-JRQ1NJLJRK"
           strategy="beforeInteractive"

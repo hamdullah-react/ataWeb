@@ -2,7 +2,7 @@ export default function robots() {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
+      allow: '/admin',
       disallow:'',
     },
     sitemap: 'https://www.mgssuae.com/sitemap.xml',
