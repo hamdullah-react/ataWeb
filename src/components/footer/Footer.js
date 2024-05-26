@@ -27,7 +27,7 @@ const Footer = () => {
             <p className="mb-0">
 
               <i className="fa fa-phone-alt text-primary mr-3" />
-              +971 4 33 27 424
+              00971562071106
             </p>
             <p className="mb-2">
               <i className="fa fa-envelope text-primary mr-3" />

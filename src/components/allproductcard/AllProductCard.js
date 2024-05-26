@@ -20,10 +20,10 @@ export default function AllProductCard({data}) {
             alt={data.name}
             width={500}
             height={100}
-            layout="responsive"
+            className=' md:h-[50vh]'
           />
-          <div className="card-body border-left border-right text-center">
-            <h6 className="font-weight-bold text-[10px] md:text-[15px] text-truncate mb-3 uppercase">
+          <div className="h-[16vh] md:h-[20vh] card-body border-left border-right text-center">
+            <h6 className="font-weight-bold text-[10px] md:text-[15px] text-truncate mb-2 md:mb-3 uppercase">
               {data.name}
             </h6>
             <p className="overflow-hidden text-[10px] md:text-[15px] line-clamp-3">
