@@ -10,24 +10,21 @@ const Footer = () => {
         <div className="row px-xl-5 pt-5">
           <div className="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
             <Link href={'./'} className="text-decoration-none">
-              <h1 className="mb-4 display-5 font-weight-semi-bold">
+              <h1 className="mb-4 text-[15px]  display-5 font-weight-semi-bold">
                 <span className="text-primary font-weight-bold border border-white px-3 mr-1">
                   Ghulam Haider
                 </span>
                 General Manager
               </h1>
             </Link>
-
-
-
             <p className="mb-0">
               <i className="fa-solid fa-mobile text-primary mr-3"></i>
-              +971 56 2215 770
+              +971 4 3327424
             </p>
             <p className="mb-0">
 
               <i className="fa fa-phone-alt text-primary mr-3" />
-              00971562071106
+              +971 56 2071 106
             </p>
             <p className="mb-2">
               <i className="fa fa-envelope text-primary mr-3" />
@@ -35,7 +32,8 @@ const Footer = () => {
             </p>
             <p className="mb-2">
               <i className="fa fa-map-marker-alt text-primary mr-3" />
-              Mustafa Mohd.Abdul Noor Bldg.Behind Golden Square Hotel Nakheel Road,Deira,Dubai - U.A.E.
+              Mustafa Mohd.Abdul Noor Bldg.Behind Citi stay premium Hotel Nakheel
+                Road,Deira,Dubai - U.A.E.
             </p>
 
           </div>

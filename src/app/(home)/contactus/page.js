@@ -101,7 +101,7 @@ const page = () => {
           <div className="col-lg-5 mb-5">
             <h5 className="font-weight-semi-bold mb-3">Get In Touch</h5>
             <span className="text-decoration-none">
-              <h1 className="mb-4 display-5 font-weight-semi-bold">
+              <h1 className="mb-4 text-[15px] display-5 font-weight-semi-bold">
                 <span className="text-primary font-weight-bold border border-white px-3 mr-1">
                   Ghulam Haider
                 </span>
@@ -117,15 +117,15 @@ const page = () => {
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt text-primary mr-3" />
-                +971 4 33 27 424
+                +971 4 3327424
               </p>
               <p className="mb-2">
                 <i className="fa-solid fa-mobile text-primary mr-3"></i>
-                00971562071106
+                +971 56 2071 106
               </p>
               <p className="mb-2">
                 <i className="fa fa-map-marker-alt text-primary mr-3" />
-                Mustafa Mohd.Abdul Noor Bldg.Behind Golden Square Hotel Nakheel
+                Mustafa Mohd.Abdul Noor Bldg.Behind Citi stay premium Hotel Nakheel
                 Road,Deira,Dubai - U.A.E.
               </p>
             </div>
