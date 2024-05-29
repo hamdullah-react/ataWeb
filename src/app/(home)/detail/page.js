@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 export async function generateMetadata({ params, searchParams }, parent) {
  
   const parsedData = JSON.parse(searchParams.data);
-    console.log("firstdata", parsedData);
+
 
     return {
       // Add openGraph or other metadata properties as needed

@@ -71,6 +71,7 @@ export default function AddDataForm() {
           label="Category"
           onChange={(e) => setSelectedCategory(e.target.value)}
           fullWidth
+          required
         >
           {categories.map((category) => (
             <MenuItem key={category.id} value={category.id}>

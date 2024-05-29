@@ -12,20 +12,23 @@ const ProductDetail = ({ receivedObject }) => {
       {/* Page Header Start */}
 
       <div className="container-fluid  mb-5">
+      <p className="mt-2">
+              <Link href="/">Home</Link>
+            </p>
         <div
           className="d-flex flex-column align-items-center justify-content-center"
           style={{ minHeight: 300 }}
         >
-          <h1 className="font-weight-semi-bold text-uppercase mb-3">
+          <h1 className="text-center font-weight-semi-bold text-uppercase mb-3">
             Shop Detail
           </h1>
           <div className="d-inline-flex">
-            <p className="m-0">
-              <Link href="/">Home</Link>
-            </p>
-            <p className="m-0 px-2">-</p>
-            <p className="m-0">{receivedObject.name}</p>
+            
+            <p className="m-0 text-center">{receivedObject.name}</p>
           </div>
+
+          
+          
         </div>
       </div>
       {/* Page Header End */}

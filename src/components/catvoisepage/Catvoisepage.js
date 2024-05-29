@@ -116,7 +116,7 @@ const Catvoisepage = () => {
                 </div>
               </div>
               {filteredProducts.map((product,index) => (
-                 <div key={index} className="col-6 col-lg-3 col-md-6  pb-1">
+                 <div key={index} className="col-6 col-lg-4 col-md-4  pb-1">
               <Link
                     style={{ textDecoration: "none" }}
                     href={{

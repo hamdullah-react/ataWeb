@@ -45,15 +45,15 @@ const Aboutus = () => {
 
       <div className="container">
         <div className="row flex justify-center">
-          <div className="col-md-5">
+          <div className="col-md-8">
             <div className="u-size-30 u-size-60-md">
               <div className="u-layout-col">
                 <div className="u-align-left u-container-align-center-sm u-container-align-center-xs u-container-style u-layout-cell u-palette-1-base u-right-cell u-size-60 u-layout-cell-1">
                   <div className="u-container-layout u-valign-middle u-container-layout-1">
-                    <h2 className="text-[20px] u-align-center-sm u-align-center-xs u-text u-text-1">
+                    <h2 className="text-center text-[20px] u-align-center-sm u-align-center-xs u-text u-text-1">
                       About Our Company
                     </h2>
-                    <p className="mt-4 u-align-center-sm u-align-center-xs u-text u-text-2">
+                    <p className="mt-4 u-align-center-sm u-align-center-xs u-text u-text-2 text-center">
                     <strong>Mohammad Ghulam Security Solution (MGSS)</strong> was founded in 2018 in Dubai, UAE. 
                       We specialize in providing security solutions including security camera accessories such as cables, connectors, devices, poles, adapters, and power supplies. 
                       At <strong>MGSS,</strong> our main goal is customer satisfaction, offering the best quality products at competitive prices. 
@@ -69,7 +69,7 @@ const Aboutus = () => {
             </div>
           </div>
 
-          <div className="col-md-5">
+          {/* <div className="col-md-5">
             <div className="container">
               <div className="row flex justify-center">
                 {images.map((imag, index) => (
@@ -90,7 +90,7 @@ const Aboutus = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

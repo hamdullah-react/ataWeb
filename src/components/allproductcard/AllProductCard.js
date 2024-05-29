@@ -22,8 +22,8 @@ export default function AllProductCard({data}) {
             height={100}
             className=' md:h-[50vh]'
           />
-          <div className="h-[16vh] md:h-[20vh] p-3 border-left border-right text-center">
-            <h6 className="font-weight-bold text-[12px] md:text-[15px] text-truncate mb-2 md:mb-3 uppercase">
+          <div className=" h-[9.5vh] md:h-[16vh] px-2 border-left border-right text-center">
+            <h6 className="font-weight-bold text-[13px] md:text-[15px] text-truncate mb-2  uppercase">
               {data.name}
             </h6>
             <p className="overflow-hidden text-[10px] md:text-[15px] line-clamp-3">
