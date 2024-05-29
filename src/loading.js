@@ -8,7 +8,7 @@ const LoadingPage = ({ children }) => {
     // Hide loading page after 8 seconds
     const timer = setTimeout(() => {
       setShowLoading(false);
-    }, 200000);
+    }, 2000);
 
     // Clean up function
     return () => clearTimeout(timer);
