@@ -2,14 +2,14 @@ import * as React from 'react';
 
 import Image from 'next/image';
 
-export default function AllProductCard({data}) {
+export default function AllProductCard({ data }) {
 
   return (
     <>
       <div
         style={{
           borderRadius: "10px",
-          height:'auto',
+          height: 'auto',
           boxShadow: "10px 4px 6px rgba(0, 0, 0, 0.1)"
         }}
         className="card product-item border-0 mt-4"

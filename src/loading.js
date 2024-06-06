@@ -44,6 +44,7 @@ const LoadingPage = ({ children }) => {
           <div style={{ "--i": 1 }}>c</div>
           <div style={{ "--i": 1 }}>o</div>
           <div style={{ "--i": 1 }}>m</div>
+          <div style={{ "--i": 1 }}>e</div>
         </div>
 
         <div className="loader">
