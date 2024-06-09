@@ -3,7 +3,7 @@ import React from 'react'
 const Whatsapp = () => {
   return (
     <a
-    href="https://wa.me/+971 54 497 2192"
+    href="https://wa.me/+971 4 3327424"
     className="hover:no-underline fusion-icon-only-link fusion-background-highlight"
   >
     <span className=" menu-text fusion-button button-default button-medium pr-2">

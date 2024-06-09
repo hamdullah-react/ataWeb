@@ -22,7 +22,7 @@ const Dropdown = ({toggleNavbar}) => {
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
-        className="menu"
+        className="menu relative z-50"
       >
         <motion.button
         className="hover:text-[black] nav-link shadow-none d-flex align-items-center justify-content-between bg-[#28a745] text-black w-100"

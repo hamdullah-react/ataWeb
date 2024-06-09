@@ -34,7 +34,7 @@ const Catvoisepage = () => {
           </h1>
           <div className="d-inline-flex">
             <p className="m-0">
-              <Link href="/products">Home</Link>
+              <Link href="/">Home</Link>
             </p>
             <p className="m-0 px-2">-</p>
             <p className="m-0">Shop</p>

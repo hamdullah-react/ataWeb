@@ -282,13 +282,6 @@ export const categories = [{
                 description: "Enhance your coaxial cable connections with our high-quality F Connectors. Perfect for use in satellite, cable TV, and broadband internet installations, these connectors ensure a secure and reliable connection. Designed for durability and ease of use, they provide excellent signal transmission with minimal interference. Upgrade your home or office setup with these essential F connectors, ideal for both professional and DIY installations."
             }
             
-
-
-
-
-
-
-
         ],
     },
 ];
