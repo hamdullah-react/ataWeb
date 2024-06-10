@@ -55,7 +55,10 @@ function BootstrapSlider() {
     });
   }, []);
   return (
-    <div id="carouselExampleCaptions" className="border-4 carousel slide carousel-fade">
+    <div
+      id="carouselExampleCaptions"
+      className=" inset-0 bg-center bg-cover bg-no-repeat z-0 py-2 glowing-border bg-white carousel slide carousel-fade bg-[url('/img/slide/bg.png')]"
+    >
       <div className="carousel-indicators">
         {slides.map((slide, index) => (
           <button
@@ -71,44 +74,35 @@ function BootstrapSlider() {
       </div>
       <div className="carousel-inner">
         {slides.map((slide, index) => (
-          
           <div
             key={index}
-            className={`container carousel-item ${index === 0 ? "active" : ""}`}
+            className={`container py-3 carousel-item ${index === 0 ? "active" : ""}`}
           >
-            <div className="row">
-
-            <div className="col-md-6">
-            <div className="flex justify-center items-center">
-              <img
-                src={slide.src}
-                className="h-[50vh] object-contain"
-                alt={slide.alt}
-              />
-            </div>
-
-            </div>
-            <div className="col-md-6">
-            <div className="text-center">
-              <h1 className="font-bold">{slide.alt}</h1>
-              <p className="mt-2">{slide.caption}</p>
-              <div className="flex justify-center">
-                <Link
-                  href="/products"
-                  className="mt-2 md:mt-5 uppercase hover:text-[black] nav-link shadow-none d-flex align-items-center justify-content-between bg-[#28a745] text-black"
-                >
-                  explore
-                </Link>
+            <div className="row flex justify-center">
+              <div className="col-md-6">
+                <div className="flex justify-center items-center">
+                  <img
+                    src={slide.src}
+                    className="h-[40vh] md:h-[90vh] object-contain"
+                    alt={slide.alt}
+                  />
+                </div>
               </div>
-        
-          
+              <div className="col-md-6 flex justify-center items-center">
+                <div className="text-center md:text-[25px] lg:text-[30px]">
+                  <h1 className="font-bold">{slide.alt}</h1>
+                  <p className="mt-3">{slide.caption}</p>
+                  <div className="flex justify-center mt-2">
+                    <Link
+                      href="/products"
+                      className=" uppercase hover:text-[black] nav-link  d-flex align-items-center justify-content-between text-[25px] py-0 rounded-sm shadow-md bg-[#267338] text-white hover:bg-[#0e551e]"
+                    >
+                      explore
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
-            </div>
-
-            </div>
-         
-
-        
           </div>
         ))}
       </div>
