@@ -41,10 +41,11 @@ const slides = [
 ];
 
 function BootstrapSlider() {
-
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min").then((bootstrap) => {
-      const carouselElement = document.querySelector("#carouselExampleCaptions");
+      const carouselElement = document.querySelector(
+        "#carouselExampleCaptions"
+      );
       if (carouselElement) {
         new bootstrap.Carousel(carouselElement, {
           interval: 3000,
@@ -54,7 +55,7 @@ function BootstrapSlider() {
     });
   }, []);
   return (
-    <div id="carouselExampleCaptions" className="carousel slide carousel-fade">
+    <div id="carouselExampleCaptions" className="border-4 carousel slide carousel-fade">
       <div className="carousel-indicators">
         {slides.map((slide, index) => (
           <button
@@ -70,25 +71,44 @@ function BootstrapSlider() {
       </div>
       <div className="carousel-inner">
         {slides.map((slide, index) => (
+          
           <div
             key={index}
-            className={`relative  carousel-item ${index === 0 ? "active" : ""}`}
+            className={`container carousel-item ${index === 0 ? "active" : ""}`}
           >
-            <img
-              src={slide.src}
-              className="d-block w-100 md:h-[85vh] object-cover"
-              alt={slide.alt}
-            />
-            <div className="absolute text-center top-[50px] right-[60px] sm:top-[100px] sm:right-[90px]  md:top-[190px] md:right-[170px] w-[50%] text-[12px] sm:text-[20px] md:text-[30px]">
-              <h1 className=" font-bold ">{slide.alt}</h1>
-              <p className=" mt-2 ">{slide.caption}</p>
-              <div className="flex justify-center">
+            <div className="row">
 
-              <Link href={'/products'} className="mt-2 md:mt-5 uppercase hover:text-[black] nav-link shadow-none d-flex align-items-center justify-content-between bg-[#28a745] text-black">
-                explore
-              </Link>
-              </div>
+            <div className="col-md-6">
+            <div className="flex justify-center items-center">
+              <img
+                src={slide.src}
+                className="h-[50vh] object-contain"
+                alt={slide.alt}
+              />
             </div>
+
+            </div>
+            <div className="col-md-6">
+            <div className="text-center">
+              <h1 className="font-bold">{slide.alt}</h1>
+              <p className="mt-2">{slide.caption}</p>
+              <div className="flex justify-center">
+                <Link
+                  href="/products"
+                  className="mt-2 md:mt-5 uppercase hover:text-[black] nav-link shadow-none d-flex align-items-center justify-content-between bg-[#28a745] text-black"
+                >
+                  explore
+                </Link>
+              </div>
+        
+          
+            </div>
+            </div>
+
+            </div>
+         
+
+        
           </div>
         ))}
       </div>
@@ -98,7 +118,10 @@ function BootstrapSlider() {
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon border-2 p-3 border-green-500" aria-hidden="true"></span>
+        <span
+          className="carousel-control-prev-icon border-2 p-3 border-green-500"
+          aria-hidden="true"
+        ></span>
       </button>
       <button
         className="carousel-control-next"
@@ -106,7 +129,10 @@ function BootstrapSlider() {
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon border-2 p-3 border-green-500" aria-hidden="true"></span>
+        <span
+          className="carousel-control-next-icon border-2 p-3 border-green-500"
+          aria-hidden="true"
+        ></span>
       </button>
     </div>
   );
