@@ -157,17 +157,67 @@ body {
 .glowing-border {
   border: 2px solid;
   border-image: linear-gradient(45deg, #ea9898, #09b309, #12126e) 1;
-  box-shadow: 0 0 10px rgba(100, 0, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(105, 105, 122, 0.8);
-  animation: glow 1.5s infinite alternate;
+  box-shadow: 0 0 5px rgba(100, 0, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(105, 105, 122, 0.8);
+  animation: glow 3.5s infinite alternate;
   border-radius: 10px;
   
 }
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 10px rgba(100, 0, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(82, 82, 143, 0.8);
+    box-shadow: 0 0 5px rgba(100, 0, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(82, 82, 143, 0.8);
   }
   to {
-    box-shadow: 0 0 20px rgb(180, 103, 103), 0 0 30px rgb(42, 83, 42), 0 0 40px rgb(89, 89, 117);
+    box-shadow: 0 0 10px rgb(180, 103, 103), 0 0 30px rgb(42, 83, 42), 0 0 40px rgb(89, 89, 117);
+  }
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.card1::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card1::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
   }
 }

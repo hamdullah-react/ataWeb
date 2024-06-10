@@ -17,8 +17,8 @@ export default function Home() {
   {/* <Headerslider/> */}
   {/* <Catagorie/> */}
   {/* <Lable/> */}
-  {/* <Banner/> */}
-  <BootsrtrapSlider/>
+  <Banner/>
+  {/* <BootsrtrapSlider/> */}
   <Homeaboutus/>
   <AllProducts/>
   {/* <JustArrive/> */}

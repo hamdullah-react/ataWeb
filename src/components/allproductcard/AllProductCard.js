@@ -12,7 +12,7 @@ export default function AllProductCard({ data }) {
           height: 'auto',
           boxShadow: "10px 4px 6px rgba(0, 0, 0, 0.1)"
         }}
-        className="card product-item border-0 mt-4"
+        className=" card product-item border-0 mt-4"
       >
         <div style={{ textDecoration: "none", borderRadius: "10px" }} className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
           <Image

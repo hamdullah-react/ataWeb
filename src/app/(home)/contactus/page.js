@@ -117,7 +117,7 @@ const page = () => {
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt text-primary mr-3" />
-                +971 4 3327424
+                +971 43 32 7424
               </p>
               <p className="mb-2">
                 <i className="fa-solid fa-mobile text-primary mr-3"></i>

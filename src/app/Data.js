@@ -7,12 +7,7 @@ export const categories = [{
                 img: "img/categorie/camerapolls/1.png",
                 description: "The Universal Plastic 1258ZJ Wall Mounted Bracket Holder is a versatile accessory designed specifically for CCTV IP cameras. Engineered with durable plastic, this bracket ensures reliable support and stability for your camera setup. Its wall-mounted design offers convenient installation options, allowing you to securely mount your CCTV IP camera in optimal positions for surveillance purposes. With its universal compatibility, this bracket accommodates a wide range of CCTV IP camera models, providing flexibility in your security system setup. Whether for home or commercial use, this bracket holder is an essential component for ensuring the effective positioning and functionality of your CCTV IP camera. Trust in its sturdy construction and adaptable design to enhance the performance of your surveillance system."
             },
-            {
-                id: 2,
-                name: "FTTH ABS Plastic Box Type Installation 12 24-core Optical Fiber Splice Tray For FTTH Terminal Box Flame retardant thickening",
-                img: "img/categorie/camerapolls/2.png",
-                description: "Upgrade your fiber optic network with the FTTH ABS Plastic Box Type Installation 12 24-core Optical Fiber Splice Tray. Engineered from durable ABS plastic, this splice tray guarantees long-lasting performance and flame retardant protection, ensuring safety in any environment. Tailored for effortless integration into FTTH terminal boxes, this tray accommodates 12 to 24 optical fiber cores, optimizing cable organization and management. Its space-efficient box-type design safeguards delicate fiber optic components while maximizing installation flexibility. With its flame retardant properties and robust construction, this splice tray delivers enhanced safety and reliability, minimizing fire risks and ensuring consistent network stability. Perfect for residential or commercial installations, trust in this FTTH splice tray for seamless connectivity and enduring performance."
-            },
+          
             {
                 id: 3,
                 name: "Installation bracket of metal closed circuit TV shell column ring for road monitoring PTZ camera",
@@ -75,12 +70,7 @@ export const categories = [{
                 img: "img/categorie/camerapolls/12.png",
                 description: "Enhance the security of your premises with our universal wall mounting bracket designed specifically for closed CCTV hemisphere surveillance cameras. This robust bracket ensures a secure and stable installation, providing optimal angles for comprehensive monitoring. Featuring an embedded line of fluorite camera, it delivers superior clarity and precision, making it ideal for both residential and commercial surveillance needs. Easy to install and compatible with a wide range of cameras, this mounting bracket is the perfect choice for a seamless and reliable security setup.",
             },
-            {
-                id: 13,
-                name: "12V20AH +18CHANNEL  POWER SUPPLY , 12V30AH +18CHANNEL POWER SUPPLY",
-                img: "img/categorie/camerapolls/13.png",
-                description: "Ensure uninterrupted power for your surveillance systems with our reliable 12V power supplies. Available in 20AH and 30AH capacities, both models come equipped with 18 channels, providing robust power distribution for multiple CCTV cameras. Designed for efficiency and durability, these power supplies offer stable performance and are perfect for both small and large security setups. Ideal for enhancing the reliability of your surveillance infrastructure, our power supplies are easy to install and maintain, ensuring your cameras remain operational around the clock."
-            },
+      
             {
                 id: 14,
                 name: "L-type hoop support aluminum alloy camera monitoring pillar support CCTV camera bracket 22CM",
@@ -222,24 +212,33 @@ export const categories = [{
     {
         id: 4,
         name: "Adaptor & Power Supply",
-        data: [{
-                id: 1,
-                name: "12V 5AH Adaptor ,  12V 10AH Adaptor",
-                img: "img/categorie/adopter&powersupply/1.png",
-                description: "Adaptors with different amperage ratings for 12V devices."
+        data: [
+            {
+              id: 1,
+              name: "12V 5AH Adaptor, 12V 10AH Adaptor",
+              img: "img/categorie/adopter&powersupply/1.png",
+              description: "High-quality 12V adapters with 5AH and 10AH options, ensuring reliable power for your devices. Perfect for various electronic applications."
             },
             {
-                id: 2,
-                name: "12V20AH +18CHANNEL  POWER SUPPLY , 12V30AH +18CHANNEL POWER SUPPLY",
-                img: "img/categorie/adopter&powersupply/2.png",
-                description: "Power supplies with multiple channels and ample capacity for various devices."
+              id: 2,
+              name: "12V 20AH + 18 Channel Power Supply, 12V 30AH + 18 Channel Power Supply",
+              img: "img/categorie/adopter&powersupply/2.png",
+              description: "Robust power supplies with 18 channels, available in 20AH and 30AH. Ideal for powering multiple devices efficiently and reliably."
             },
-
-
-
-
-        ],
-    },
+            {
+              id: 3,
+              name: "Power Supply 12V 5Ah + 4 Channel",
+              img: "img/categorie/adopter&powersupply/3.jpeg",
+              description: "Efficient 12V 5Ah power supply with 4 channels, designed for stable power distribution across multiple devices."
+            },
+            {
+              id: 4,
+              name: "Power Supply 12V 10Ah + 9 Channel",
+              img: "img/categorie/adopter&powersupply/4.png",
+              description: "Reliable 12V 10Ah power supply featuring 9 channels, perfect for managing power needs of various electronics seamlessly."
+            },
+          ]
+        },
 
     {
         id: 5,

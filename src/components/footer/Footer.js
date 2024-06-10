@@ -19,7 +19,7 @@ const Footer = () => {
             </Link>
             <p className="mb-0">
               <i className="fa-solid fa-mobile text-primary mr-3"></i>
-              +971 4 3327424
+              +971 43 32 7424
             </p>
             <p className="mb-0">
 
