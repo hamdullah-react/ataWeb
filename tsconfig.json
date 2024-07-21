@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "src/app/(DashboardLayout)/ui-components/layout.js", "src/utils/theme.js", "src/utils/createEmotionCache.js", "src/utils/theme/DefaultColors.js", "src/app/(DashboardLayout)/components/container/PageCosrc/app/(DashboardLayout)/ui-components/page.jsayout)/page.js", "src/app/(DashboardLayout)/loading.tsx", "src/app/(DashboardLayout)/ui-components/table/page.tsx", src/app/(DashboardLayout)/ui-components/ratings/page.tsxs", "src/app/(DashboardLayout)/ui-components/table/page.tsx",src/app/(DashboardLayout)/ui-components/ratings/page.tsxjssrc/app/(DashboardLayout)/ui-components/pagination/page.tsxe.jsrc/app/(DashboardLayout)/ui-components/images/page.tsxge.src/app/(DashboardLayout)/ui-components/forms/page.tsxagesrc/app/(DashboardLayout)/ui-components/buttons/page.tsxpagsrc/app/(DashboardLayout)/ui-components/alerts/page.tsx/pasrc/app/(DashboardLayout)/layout/sidebar/Updrade.tsxpdrsrc/app/(DashboardLayout)/layout/sidebar/SidebarProfile.tsxProfile.js", "src/app/(DashboardLayout)/layout/sidebar/SidebarItems.js", "src/app/(DashboardLayout)/layout/sidebar/Sidebar.js", "src/app/(DashboardLayout)/layout/sidebar/MenuItems.js", "src/app/(DashboardLayout)/layout/sidebar/NavItem/index.js", "src/app/(DashboardLayout)/layout/sidebar/NavGroup/NavGroup.js", "src/app/(DashboardLayout)/layout/shared/logo/LogoDark.js", "src/app/(DashboardLayout)/layout/shared/logo/Logo.js", "src/app/(DashboardLayout)/layout/header/Search.js", "src/app/(DashboardLayout)/layout/header/Header.js", "src/app/(DashboardLayout)/layout/header/Profile.js", "src/app/(DashboardLayout)/layout/header/data.js", "src/app/(DashboardLayout)/layout/footer/page.js", "src/app/(DashboardLayout)/icons/page.js", "src/app/(DashboardLayout)/components/shared/DashboardCard.js", "src/app/(DashboardLayout)/components/shared/BlankCard.js", "src/app/(DashboardLayout)/components/shared/BaseCard.js", "src/app/(DashboardLayout)/components/forms/theme-elements/CustomTextField.js", "src/app/(DashboardLayout)/components/forms/theme-elements/CustomSelect.js", "src/app/(DashboardLayout)/components/forms/theme-elements/CustomFormsrc/app/(DashboardLayout)/components/dashboard/TheSalesOverview.tsxsOvesrc/app/(DashboardLayout)/components/dashboard/TheProfileCard.tsxofilsrc/app/(DashboardLayout)/components/dashboard/TheMyContacts.tsxyConsrc/app/(DashboardLayout)/components/dashboard/TheBlogCard.tsxeBlosrc/app/(DashboardLayout)/components/dashboard/TheActivityTimeline.tsxyTimesrc/app/(DashboardLayout)/components/dashboard/ProductPerformance.tsxformance.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,9 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { categories } from "../../app/Data";
 import Link from "next/link";
 
 import { motion, Variants } from "framer-motion";
+
+import { useCategoryContext } from "../context/CategoryContext";
+import { DataContext } from "../context/catData";
+import { useRouter,usePathname  } from "next/navigation";
+
 
 const itemVariants = {
   open: {
@@ -14,9 +19,32 @@ const itemVariants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
-const Dropdown = ({toggleNavbar}) => {
+const Dropdown = () => {
+
+  // const { data, handleDataChange } = useContext(DataContext); 
+ 
+  
   const [isOpen, setIsOpen] = useState(false);
 
+ 
+
+  // const handleNavigation = (menu) => {
+  //   handleDataChange(menu);
+  //   router.push('/categoriepage');
+  // };
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleNavigation = (menu) => {
+;
+
+    // Construct query string
+    const queryString=JSON.stringify(menu);
+    console.log('ccccccccccccccc',queryString)
+
+    // Push to new page with query string
+    router.push(`/categoriepage?${queryString}`);
+  };
   return (
     <>
       <motion.nav
@@ -68,17 +96,17 @@ const Dropdown = ({toggleNavbar}) => {
           }}
           style={{ pointerEvents: isOpen ? "auto" : "none" }}
         >
+          
           {categories.map((menu, index) => (
             <Link
-            onClick={toggleNavbar}
               key={index}
               href={{
-                pathname: "/categoriepage1",
-                query: { data: JSON.stringify(menu) },
+                pathname: '/categoriepage',
+                query: { menu: JSON.stringify(menu) },
               }}
-              className=" dropdown-item"
+              className="dropdown-item"
             >
-              <motion.li variants={itemVariants}>{menu.name} </motion.li>
+              <motion.li variants={itemVariants}>{menu.name}</motion.li>
             </Link>
           ))}
         </motion.ul>

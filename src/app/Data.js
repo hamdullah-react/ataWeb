@@ -1,7 +1,9 @@
-export const categories = [{
+export const categories = [
+    {
         id: 1,
         name: "Camera Polls",
-        data: [{
+        data: [
+            {
                 id: 1,
                 name: "Universal plastic 1258zj wall mounted bracket holder for CCTV IP Camera",
                 img: "img/categorie/camerapolls/1.png",
@@ -9,101 +11,101 @@ export const categories = [{
             },
           
             {
-                id: 3,
+                id: 2,
                 name: "Installation bracket of metal closed circuit TV shell column ring for road monitoring PTZ camera",
                 img: "img/categorie/camerapolls/3.png",
                 description: "Elevate your road monitoring capabilities with this sturdy metal bracket designed specifically for PTZ cameras. Easily installable on poles or columns, this bracket ensures optimal positioning and stability for your CCTV system. Its closed circuit TV shell provides protection against harsh weather conditions, ensuring reliable performance in any environment. Enhance your surveillance infrastructure with this versatile and durable mounting solution."
             },
 
             {
-                id: 4,
+                id: 3,
                 name: "Monitoring Dome Bracket Plastic Ceiling Dome Bracket Concealed Wire Bracket Round Dome Power Supply Concealed Wire Box",
                 img: "img/categorie/camerapolls/4.png",
                 description: "Upgrade your surveillance setup with this versatile plastic bracket designed for monitoring domes. Crafted to seamlessly integrate into ceilings, this bracket provides concealed wire management for a clean and professional installation. Its round dome power supply box ensures wires remain hidden and protected. Enhance your security system with this reliable and practical bracket solution."
             },
             {
-                id: 5,
+                id: 4,
                 name: "PTZ monitoring insulation anti-interference bracket ABS plastic wall mounted indoor camera universal bracket CCTV 9.3CM",
                 img: "img/categorie/camerapolls/5.png",
                 description: "Enhance the performance of your indoor surveillance system with this versatile ABS plastic bracket. Designed to minimize interference and ensure insulation, this wall-mounted bracket is compatible with a wide range of PTZ cameras. Its universal design and adjustable features make it easy to install and position cameras for optimal coverage. With a compact size of 9.3CM, this bracket offers a space-saving solution without compromising on stability. Elevate your CCTV setup with this reliable and effective mounting bracket."
             },
             {
-                id: 6,
+                id: 5,
                 name: "Monitoring wall mounted aluminum alloy support camera one support telescopic installation CCTV monitoring system 30-60CM",
                 img: "img/categorie/camerapolls/6.png",
                 description: "Optimize your CCTV monitoring system with this aluminum alloy wall-mounted support. Designed for easy telescopic installation, this support offers versatile camera positioning within a range of 30-60CM. Crafted from durable aluminum alloy, it ensures stability and longevity, providing reliable support for your surveillance cameras. Upgrade your monitoring setup with this practical and adjustable support bracket."
             },
             {
-                id: 7,
+                id: 6,
                 name: "Arlo monitoring aluminum alloy bracket camera universal adjustment bracket aircraft small bracket 124mm",
                 img: "img/categorie/camerapolls/7.png",
                 description: "This Arlo monitoring aluminum alloy bracket is designed for universal adjustment, making it an ideal choice for a variety of camera setups. With a length of 124mm, this small yet sturdy bracket provides stable support and flexible positioning for your camera. Its robust aluminum alloy construction ensures durability and reliability, perfect for both indoor and outdoor use. Whether for security monitoring or general camera mounting, this adjustable bracket allows precise alignment, enhancing the overall effectiveness of your camera system.",
             },
 
             {
-                id: 8,
+                id: 7,
                 name: "Universal Plastic wall mounted large bracket, suitable for dome CCTV surveillance security camera DS-1258ZJ",
                 img: "img/categorie/camerapolls/8.png",
                 description: "This universal plastic wall-mounted large bracket is designed for dome CCTV surveillance security cameras, specifically model DS-1258ZJ. It provides a sturdy and reliable mounting solution, ensuring the camera is securely attached to the wall. The bracket's durable plastic construction offers long-lasting performance and can withstand various environmental conditions. Ideal for both indoor and outdoor use, this bracket allows for optimal positioning of your security camera, enhancing the overall effectiveness of your surveillance system.",
             },
             {
-                id: 9,
+                id: 8,
                 name: "Universal ABS plastic wall mounted bracket, suitable for hemispheric CCTV monitoring and security camera",
                 img: "img/categorie/camerapolls/9.png",
                 description: "This universal ABS plastic wall-mounted bracket is designed to support hemispheric CCTV monitoring and security cameras. Its versatile design allows for easy installation on walls, providing a stable and secure mounting solution for your camera. Made from high-quality ABS plastic, this bracket is durable and weather-resistant, making it suitable for both indoor and outdoor use. With its adjustable design, you can easily adjust the angle and position of your camera for optimal surveillance coverage. Enhance your security system with this reliable and practical wall-mounted bracket.",
             },
             {
-                id: 10,
+                id: 9,
                 name: "plastic dome CCTV camera base connecting plate ceiling mounting bracket junction box hidden cable",
                 img: "img/categorie/camerapolls/10.png",
                 description: "This plastic dome CCTV camera base connecting plate serves as a ceiling mounting bracket and junction box for your surveillance camera system. It provides a secure and stable base for mounting dome-style CCTV cameras to the ceiling. Additionally, it features a junction box for neatly hiding cables, ensuring a clean and professional installation. Made from durable plastic, this bracket is lightweight yet sturdy, suitable for both indoor and outdoor use. Enhance the aesthetics and functionality of your CCTV camera system with this versatile and practical mounting solution.",
             },
             {
-                id: 11,
+                id: 10,
                 name: "Aluminum alloy universal safety CCTV wall mounted surveillance camera vertical L-shaped bracket 17CM",
                 img: "img/categorie/camerapolls/11.png",
                 description: "Enhance the security and surveillance of your property with the Aluminum Alloy Universal Safety CCTV Wall Mounted Surveillance Camera Vertical L-Shaped Bracket. Crafted from durable aluminum alloy, this 17CM bracket offers a reliable and sturdy mounting solution for your CCTV cameras. Its universal design ensures compatibility with a wide range of surveillance cameras, making it a versatile choice for both residential and commercial installations. Made from high-quality aluminum alloy, it ensures longevity and resistance to weather and wear. The vertical L-shaped design offers a robust and stable mount, keeping your camera securely in place. The wall-mounted design allows for quick and straightforward installation, while the 17CM length provides an ideal distance from the wall, allowing for better camera angles and coverage. Upgrade your surveillance system with this reliable and versatile bracket, ensuring your security cameras are optimally positioned for maximum coverage and effectiveness.",
             },
             {
-                id: 12,
+                id: 11,
                 name: "Universal wall mounting bracket for closed CCTV hemisphere surveillance camera with embedded line of fluorite camera",
                 img: "img/categorie/camerapolls/12.png",
                 description: "Enhance the security of your premises with our universal wall mounting bracket designed specifically for closed CCTV hemisphere surveillance cameras. This robust bracket ensures a secure and stable installation, providing optimal angles for comprehensive monitoring. Featuring an embedded line of fluorite camera, it delivers superior clarity and precision, making it ideal for both residential and commercial surveillance needs. Easy to install and compatible with a wide range of cameras, this mounting bracket is the perfect choice for a seamless and reliable security setup.",
             },
       
             {
-                id: 14,
+                id: 12,
                 name: "L-type hoop support aluminum alloy camera monitoring pillar support CCTV camera bracket 22CM",
                 img: "img/categorie/camerapolls/14.png",
                 description: "Elevate your CCTV camera setup with our L-Type Hoop Support Aluminum Alloy Camera Monitoring Pillar. Crafted from high-quality aluminum alloy, this sturdy bracket provides reliable support for your surveillance cameras, ensuring optimal positioning and stability. With a length of 22cm, it offers versatile mounting options for various surveillance needs. Designed for durability and resilience, this bracket is suitable for indoor and outdoor use, making it an ideal choice for home, office, or commercial security installations. Enhance the effectiveness of your surveillance system with this premium-quality camera bracket."
             },
             {
-                id: 15,
+                id: 13,
                 name: "Telescopic U-type wall mounted CCTV monitoring system for aluminum alloy camera bracket 45mm pipe 30-60CM",
                 img: "img/categorie/camerapolls/15.png",
                 description: "Upgrade your surveillance setup with our Telescopic U-Type Wall Mounted CCTV Monitoring System. This versatile system features a robust aluminum alloy camera bracket designed for durability and stability. With a telescopic design, it offers adjustable length ranging from 30cm to 60cm, providing flexibility in positioning your CCTV cameras. The U-type wall mount ensures secure installation, making it suitable for indoor and outdoor use. Enhance the effectiveness of your surveillance system with this reliable and adaptable camera bracket."
             },
             {
-                id: 16,
+                id: 14,
                 name: "Telescopic L-type wall mounted CCTV monitoring system for aluminum alloy camera bracket 30-60CM",
                 img: "img/categorie/camerapolls/16.png",
                 description: "Elevate your surveillance capabilities with our Telescopic L-Type Wall Mounted CCTV Monitoring System. Crafted from durable aluminum alloy, this versatile system features an adjustable bracket with a telescopic design, offering a length range of 30cm to 60cm. Whether you need to monitor indoor spaces or secure outdoor areas, this system provides flexible positioning options for your CCTV cameras. The L-type wall mount ensures secure and stable installation, making it ideal for various surveillance applications. Enhance your security setup with this reliable and adaptable camera bracket."
             },
             {
-                id: 17,
+                id: 15,
                 name: "Plastic monitoring bracket hidden wire hemisphere can be installed with power integrated wall mounted ceiling hemisphere",
                 img: "img/categorie/camerapolls/17.png",
                 description: "Upgrade your surveillance system with our Plastic Monitoring Bracket, featuring a hidden wire design for a neat and tidy installation. This versatile bracket is compatible with hemisphere-shaped cameras and offers seamless integration into both wall and ceiling setups. Crafted from durable plastic, it ensures reliable support for your CCTV camera while concealing wires for a clean appearance. Whether you're securing indoor or outdoor spaces, this bracket provides flexible mounting options to suit your needs. Enhance the effectiveness of your surveillance setup with this practical and discreet camera bracket."
             },
             {
-                id: 18,
+                id: 16,
                 name: "Monitoring Dome Bracket Plastic Ceiling Dome Bracket Concealed Wire Bracket Round Dome Power Supply Concealed Wire Box",
                 img: "img/categorie/camerapolls/18.png",
                 description: "Upgrade your surveillance system with our Monitoring Dome Bracket, designed for seamless installation and optimal camera positioning. This plastic ceiling dome bracket features a concealed wire box, ensuring a neat and tidy setup while providing reliable support for your CCTV dome cameras. With its round design, this bracket offers versatile mounting options for various indoor and outdoor surveillance applications. Enhance the security of your premises with this practical and durable solution for concealing wires and mounting dome cameras effectively."
             },
 
             {
-                id: 19,
+                id: 17,
                 name: "1272-110TRS Monitoring Outdoor Wall Mounted Hemisphere Bracket Camera Bracket Aluminum Alloy Universal Hemisphere Bracket",
                 img: "img/categorie/camerapolls/19.png",
                 description: "Upgrade your outdoor surveillance setup with our 1272-110TRS Monitoring Wall Mounted Hemisphere Bracket. Crafted from durable aluminum alloy, this universal bracket provides reliable support for your hemisphere-shaped cameras. Designed for outdoor use, it ensures secure and stable mounting, enhancing the effectiveness of your surveillance system. With easy installation and compatibility with various cameras, this bracket offers versatility and convenience for outdoor security applications. Strengthen the protection of your premises with this robust and dependable camera bracket."
@@ -112,9 +114,6 @@ export const categories = [{
 
         ],
     },
-
-
-
 
     {
         id: 2,
