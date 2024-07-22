@@ -11,16 +11,17 @@ datasource db {
 }
 
 model Category {
-  id   String  @id @default(auto()) @map("_id") @db.ObjectId
-  name String  
-  items Item[]
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+  items       Item[]
 }
 
 model Item {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
-  name        String 
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
   img         String
   description String
-  categoryId  String  @db.ObjectId
+  categoryId  String   @db.ObjectId
   category    Category @relation(fields: [categoryId], references: [id])
 }

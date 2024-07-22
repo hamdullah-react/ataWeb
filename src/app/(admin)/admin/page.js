@@ -1,13 +1,10 @@
-import SideBAr from '@/dashboardComponents/SideBAr'
-import { UploadButton } from '@/app/(home)/utils/uploadthing'
-import React from 'react'
+import SideBAr from "@/dashboardComponents/SideBAr";
 
-const page = () => {
+export default function Home() {
+
   return (
-    <>
-    <SideBAr/>
-    </>
-  )
+  <>
+  {/* <SideBAr/> */}
+  </>
+  );
 }
-
-export default page

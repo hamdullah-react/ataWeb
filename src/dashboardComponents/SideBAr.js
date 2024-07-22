@@ -16,6 +16,10 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import AddDataForm from "./addData/AddDataForm";
 import AddCategorie from "./addCategorie/AddCategorie";
 import Datatable from "./dtataTable/Datatable";
+import AdminRoutes from "./adminRoutes/AdminRoutes";
+import { usePathname } from "next/navigation";
+import Categories from "./categories/Categories";
+
 
 const drawerWidth = 240;
 
@@ -65,6 +69,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function SideBAr() {
+  const pathname = usePathname()
+
+  console.log('first',pathname)
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -91,7 +98,7 @@ export default function SideBAr() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+           MGSS DASHBOARD
           </Typography>
         </Toolbar>
       </AppBar>
@@ -120,14 +127,17 @@ export default function SideBAr() {
 
         <Divider />
 
+<AdminRoutes/>
+
         <Divider />
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
+        {pathname === '/allData' && <Datatable />}
+        {pathname === '/allCategories' && <Categories />}
+        {/* <Datatable /> */}
 
-<Datatable/>
-  
-        <AddCategorie />
+        {/* <AddCategorie /> */}
       </Main>
     </Box>
   );

@@ -1,13 +1,11 @@
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import axios from 'axios';
-import AddDataForm from '../addData/AddDataForm';
+'use client'
+import * as React from "react";
+import axios from "axios";
+import AddDataForm from "../addData/AddDataForm";
+import { MdDeleteOutline, MdModeEdit } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
+import Table from 'react-bootstrap/Table';
+import AddProducts from "../addProduct/AddProducts";
 
 export default function Datatable() {
   const [allData, setAllData] = React.useState([]);
@@ -20,7 +18,7 @@ export default function Datatable() {
     try {
       const response = await axios.get("/api/products");
       setAllData(response.data);
-      console.log('first', response.data);
+      console.log("first", response.data);
     } catch (error) {
       console.error("Error fetching categories:", error);
     }
@@ -28,45 +26,104 @@ export default function Datatable() {
 
   return (
     <>
-      <div style={{marginTop:'2rem',display:'flex',justifyContent:'end'}}>
-      <AddDataForm/>
-      
+      <div className="flex justify-end">
+        {/* <AddDataForm /> */}
+        <AddProducts/>
       </div>
-    
-    <TableContainer sx={{marginTop:'1rem'}} component={Paper}>
 
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Image</TableCell>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Description</TableCell>
-            <TableCell align="right">Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {allData.map((row) => (
-            <React.Fragment key={row.id}>
-              {row.items.map((item) => (
-                <TableRow
-                  key={`${row.id}-${item.id}`}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row">
-                    <img src={item.img} alt={item.name} style={{ width: '50px', height: 'auto' }} />
-                  </TableCell>
-                  <TableCell align="right">{item.name}</TableCell>
-                  <TableCell align="right">{item.description}</TableCell>
-                  <TableCell align="right">
-                    {/* Add your action buttons or links here */}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </React.Fragment>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+      <Table striped bordered hover className="mt-3">
+      <thead>
+        <tr>
+          <th  >Image</th>
+          <th >Name</th>
+          <th >Description</th>
+          <th >Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+
+   {allData.map((row) => (
+    <React.Fragment key={row.id}>
+      {row.items.map((item) => (
+        <tr
+          key={`${row.id}-${item.id}`}
+          className="last:border-b-0"
+        >
+          <td component="th" scope="row">
+            <img
+              src={item.img}
+              alt={item.name}
+              className="w-12 h-12 object-cover rounded"
+            />
+          </td>
+          <td >
+            {item.name}
+          </td>
+          <td >{item.description}</td>
+          <td  >
+            
+            <div className="flex gap-2">
+              <FaEye size={20} />
+              <MdModeEdit size={20} />
+              <MdDeleteOutline size={20} color={"red"} />
+            </div>
+            
+          </td>
+        </tr>
+      ))}
+    </React.Fragment>
+  ))}
+       
+      </tbody>
+    </Table>
+
+
+{/* 
+      <TableContainer className="mt-4" component={Paper}>
+        <Table className="min-w-full" aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <td>Image</td>
+              <td align="right">Name</td>
+              <td align="right">Description</td>
+              <td align="right">Actions</td>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {allData.map((row) => (
+              <React.Fragment key={row.id}>
+                {row.items.map((item) => (
+                  <TableRow
+                    key={`${row.id}-${item.id}`}
+                    className="last:border-b-0"
+                  >
+                    <td component="th" scope="row">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="w-12 h-12 object-cover rounded"
+                      />
+                    </td>
+                    <td align="right">
+                      {item.name}
+                    </td>
+                    <td align="right">{item.description}</td>
+                    <td align="right" >
+                      
+                      <div className="flex justify-end gap-2">
+                        <FaEye size={20} />
+                        <MdModeEdit size={20} />
+                        <MdDeleteOutline size={20} color={"red"} />
+                      </div>
+                      
+                    </td>
+                  </TableRow>
+                ))}
+              </React.Fragment>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer> */}
     </>
   );
 }

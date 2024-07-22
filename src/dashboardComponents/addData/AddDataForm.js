@@ -2,13 +2,14 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Select from "@mui/material/Select";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { MenuItem, TextField } from "@mui/material";
 import { UploadDropzone } from "@/app/(home)/utils/uploadthing";
+import Button from 'react-bootstrap/Button';
 
 
 export default function AddDataForm() {
@@ -47,6 +48,7 @@ export default function AddDataForm() {
       setDescription("");
       setImg("");
       alert("Data added successfully!");
+      
     } catch (error) {
       console.error("Error adding data:", error);
       alert("Error adding data. Please try again.");
@@ -133,7 +135,8 @@ export default function AddDataForm() {
 
   return (
     <div >
-      <Button variant="contained" sx={{color:'black'}} onClick={toggleDrawer(true)} >Add Products</Button>
+      <Button variant="primary" onClick={toggleDrawer(true)} >Add Products</Button>
+      
       <Drawer  open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
