@@ -6,12 +6,13 @@ import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
 import { ToastContainer, toast } from "react-toastify";
 import { useAdminContext } from "../dashboardContext/DashBoardContext";
+import { MdModeEdit } from "react-icons/md";
 import "react-toastify/dist/ReactToastify.css";
 
-const AddCategorie = () => {
-  const { addCategory, loading } = useAdminContext();
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+const UpdateCategory = ({ category }) => {
+  const { updateCategory, loading } = useAdminContext();
+  const [name, setName] = useState(category.name);
+  const [description, setDescription] = useState(category.description);
   const [show, setShow] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -21,28 +22,28 @@ const AddCategorie = () => {
       return;
     }
 
-    await addCategory(name, description);
-    setName("");
-    setDescription("");
+    await updateCategory(category.id, name, description);
     setShow(false);
-    toast.success("Category added successfully!");
+    toast.success("Category updated successfully!");
   };
 
   return (
-    <div>
-      <Button variant="primary" onClick={() => setShow(true)}>
-        Add Category
-      </Button>
+    <>
+      <MdModeEdit
+        size={20}
+        onClick={() => setShow(true)}
+        style={{ cursor: "pointer" }}
+      />
 
       <Modal
         show={show}
         onHide={() => setShow(false)}
         backdrop="static"
         keyboard={false}
-        className="mt-5"
+          className="mt-5"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Add New Category</Modal.Title>
+          <Modal.Title>Update Category</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -84,14 +85,16 @@ const AddCategorie = () => {
             onClick={handleSubmit}
             disabled={loading}
           >
-            {loading ? <Spinner animation="border" size="sm" /> : "Add Category"}
+            {loading ? (
+              <Spinner animation="border" size="sm" />
+            ) : (
+              "Update Category"
+            )}
           </Button>
         </Modal.Footer>
       </Modal>
-{/* 
-      <ToastContainer /> */}
-    </div>
+    </>
   );
 };
 
-export default AddCategorie;
+export default UpdateCategory;

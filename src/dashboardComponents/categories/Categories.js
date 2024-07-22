@@ -1,77 +1,56 @@
-'use client'
-import * as React from "react";
-import axios from "axios";
-import AddDataForm from "../addData/AddDataForm";
+"use client";
+import React from "react";
+import Table from "react-bootstrap/Table";
 import { MdDeleteOutline, MdModeEdit } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
-import Table from 'react-bootstrap/Table';
+import { useAdminContext } from "../dashboardContext/DashBoardContext";
 import AddCategorie from "../addCategorie/AddCategorie";
+import UpdateCategory from "../UpdateCategory/UpdateCategory";
+import { ToastContainer, toast } from "react-toastify";
+
 
 const Categories = () => {
-    const [allData, setAllData] = React.useState([]);
+  const { categories, deleteCategory,loading } = useAdminContext();
 
-    React.useEffect(() => {
-      fetchCategories();
-    }, []);
-  
-    const fetchCategories = async () => {
-      try {
-        const response = await axios.get("/api/categorie");
-        setAllData(response.data);
-        console.log("first", response.data);
-      } catch (error) {
-        console.error("Error fetching categories:", error);
-      }
-    };
-  
   return (
-
     <>
-          <div className="flex justify-end">
-        {/* <AddDataForm /> */}
-   <AddCategorie/>
+      <div className="flex justify-end">
+        <AddCategorie />
       </div>
 
       <Table striped bordered hover className="mt-3">
-      <thead>
-        <tr>
-          
-          <th >Name</th>
-          <th >Description</th>
-          <th >Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-
-   {allData.map((row) => (
-    <React.Fragment key={row.id}>
-         <tr
-          key={row.id}
-          className="last:border-b-0"
-        >
-
-          <td >
-            {row.name}
-          </td>
-          <td >{row.description}</td>
-          <td  >
-            
-            <div className="flex gap-2">
-              <FaEye size={20} />
-              <MdModeEdit size={20} />
-              <MdDeleteOutline size={20} color={"red"} />
-            </div>
-            
-          </td>
-        </tr>
-    </React.Fragment>
-  ))}
-       
-      </tbody>
-    </Table>
-    
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {categories.map((category) => (
+            <tr key={category.id}>
+              <td>{category.name}</td>
+              <td>{category.description}</td>
+              <td>
+                <div className="flex gap-2">
+                  <FaEye size={20} />
+                  <UpdateCategory category={category} />
+                  
+                  <MdDeleteOutline
+                    size={20}
+                    color="red"
+                    onClick={() => deleteCategory(category.id)}
+                    style={{ cursor: "pointer" }}
+                  />
+                  
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;

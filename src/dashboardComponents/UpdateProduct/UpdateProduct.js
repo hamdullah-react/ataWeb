@@ -7,15 +7,16 @@ import Spinner from "react-bootstrap/Spinner";
 import { ToastContainer, toast } from "react-toastify";
 import { UploadDropzone } from "@uploadthing/react";
 import { useAdminContext } from "../dashboardContext/DashBoardContext";
+import { MdModeEdit } from "react-icons/md";
 import "react-toastify/dist/ReactToastify.css";
 import "@uploadthing/react/styles.css";
 
-const AddProducts = () => {
-  const { addProduct, categories, loading } = useAdminContext();
-  const [categoryId, setCategoryId] = useState("");
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [img, setImg] = useState("");
+const UpdateProduct = ({ product }) => {
+  const { updateProduct, categories, loading } = useAdminContext();
+  const [categoryId, setCategoryId] = useState(product.categoryId);
+  const [name, setName] = useState(product.name);
+  const [description, setDescription] = useState(product.description);
+  const [img, setImg] = useState(product.img);
   const [show, setShow] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -25,20 +26,18 @@ const AddProducts = () => {
       return;
     }
 
-    await addProduct(categoryId, name, description, img);
-    setCategoryId("");
-    setName("");
-    setDescription("");
-    setImg("");
+    await updateProduct(product.id, name, description, img,categoryId);
     setShow(false);
-    toast.success("Product added successfully!");
+    toast.success("Product updated successfully!");
   };
 
   return (
     <>
-      <Button variant="primary" onClick={() => setShow(true)}>
-        Add Product
-      </Button>
+      <MdModeEdit
+        size={20}
+        onClick={() => setShow(true)}
+        style={{ cursor: "pointer" }}
+      />
 
       <Modal
         show={show}
@@ -48,7 +47,7 @@ const AddProducts = () => {
           className="mt-5"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Add New Product</Modal.Title>
+          <Modal.Title>Update Product</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -125,7 +124,7 @@ const AddProducts = () => {
             {loading ? (
               <Spinner animation="border" size="sm" />
             ) : (
-              "Add Product"
+              "Update Product"
             )}
           </Button>
         </Modal.Footer>
@@ -134,4 +133,4 @@ const AddProducts = () => {
   );
 };
 
-export default AddProducts;
+export default UpdateProduct;
