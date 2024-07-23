@@ -31,3 +31,24 @@ export async function PUT(req, { params }) {
     return NextResponse.json({ message: "Error updating item" }, { status: 500 });
   }
 }
+
+export async function GET(req, { params }) {
+  const { id } = params;
+  try {
+    const category = await prisma.category.findUnique({
+      include: {
+        items: true,
+      },
+      where: { id: id },
+
+    });
+    if (category) {
+      return NextResponse.json(category);
+    } else {
+      return NextResponse.json({ message: "Category not found" }, { status: 404 });
+    }
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ message: "Error fetching category" }, { status: 500 });
+  }
+}

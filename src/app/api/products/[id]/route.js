@@ -33,3 +33,19 @@ export async function PUT(req, { params }) {
     return NextResponse.json({ message: "Error updating item" }, { status: 500 });
   }
 }
+export async function GET(req, { params }) {
+  const { id } = params;
+  try {
+    const item = await prisma.item.findUnique({
+      where: { id: id },
+    });
+    if (item) {
+      return NextResponse.json(item);
+    } else {
+      return NextResponse.json({ message: "Item not found" }, { status: 404 });
+    }
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ message: "Error fetching item" }, { status: 500 });
+  }
+}
