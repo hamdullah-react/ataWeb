@@ -9,12 +9,12 @@ const routes = [
     icon: <MdDashboard />
   },
   {
-    href: '/allData',
+    href: '/admin/allData',
     label: 'All Products',
     icon: <MdOutlineProductionQuantityLimits />
   },
   {
-    href: '/allCategories',
+    href: '/admin/allCategories',
     label: 'Categories',
     icon: <MdOutlineCategory />
   }

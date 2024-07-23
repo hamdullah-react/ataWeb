@@ -91,10 +91,11 @@ const AddProducts = () => {
               />
             </Form.Group>
 
-            <Form.Group style={{ marginTop: "1rem" }}>
+            <Form.Group style={{ marginTop: "1rem", }}>
               <Form.Label>Image Upload</Form.Label>
               <img src={img} alt="" className="w-[50px]" />
               <UploadDropzone
+            
                 endpoint="imageUploader"
                 onClientUploadComplete={(res) => {
                   setImg(res[0].url);
@@ -107,14 +108,8 @@ const AddProducts = () => {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="danger"
-            onClick={() => setShow(false)}
-            disabled={loading}
-          >
-            Close
-          </Button>
+        <Modal.Footer >
+          
           <Button
             type="submit"
             variant="primary"
@@ -127,6 +122,13 @@ const AddProducts = () => {
             ) : (
               "Add Product"
             )}
+          </Button>
+          <Button
+            variant="danger"
+            onClick={() => setShow(false)}
+            disabled={loading}
+          >
+            Close
           </Button>
         </Modal.Footer>
       </Modal>

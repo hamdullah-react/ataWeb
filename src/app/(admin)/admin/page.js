@@ -1,10 +1,15 @@
-import SideBAr from "@/dashboardComponents/SideBAr";
+"use client";
 
-export default function Home() {
+import withAuth from "@/dashboardComponents/withAuth";
 
+
+
+const AdminPage = () => {
   return (
-  <>
-  {/* <SideBAr/> */}
-  </>
+    <div>
+    
+    </div>
   );
-}
+};
+
+export default withAuth(AdminPage);

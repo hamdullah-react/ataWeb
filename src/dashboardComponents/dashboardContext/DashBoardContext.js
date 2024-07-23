@@ -21,21 +21,28 @@ export const DashBoardContext = ({ children }) => {
 
   // Fetch categories from API
   const fetchCategories = async () => {
+    setLoading(true);
     try {
       const response = await axios.get("/api/categorie");
       setCategories(response.data);
     } catch (error) {
       console.error("Error fetching categories:", error);
     }
+    finally {
+      setLoading(false);
+    }
   };
 
   // Fetch products from API
   const fetchProducts = async () => {
+    setLoading(true);
     try {
       const response = await axios.get("/api/products");
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
