@@ -21,7 +21,7 @@ const ProductDetail = ({ id }) => {
 
   const skeletonItems = Array.from({ length: 5 }).map((_, index) => {
     return (
-      <div className="" key={index}>
+      <div  key={index}>
         <span>
           <Skeleton height={200} width={300} />
         </span>
@@ -110,7 +110,7 @@ const ProductDetail = ({ id }) => {
           </div>
           <div className="col-lg-7 pb-5">
             <h3 className="font-weight-semi-bold">{productDetail?.name}</h3>
-            <p class="mb-4 mt-8">{productDetail?.description}</p>
+            <p className="mb-4 mt-8">{productDetail?.description}</p>
           </div>
         </div>
       </div>)
