@@ -19,7 +19,7 @@ export default function Page({ params, searchParams }) {
   const parsedData = JSON.parse(searchParams.data);
   return (
     <Suspense>
-      <ProductDetail receivedObject={parsedData}/>
+      {/* <ProductDetail receivedObject={parsedData}/> */}
     </Suspense>
   );
 }

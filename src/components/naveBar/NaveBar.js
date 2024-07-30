@@ -145,7 +145,7 @@ function NaveBar() {
                       <Link href="/" className="nav-item nav-link active">
                         Home
                       </Link>
-                      <Link href="products" className="nav-item nav-link">
+                      <Link href="/products" className="nav-item nav-link">
                         All Products
                       </Link>
 

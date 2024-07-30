@@ -11,9 +11,9 @@ export const metadata = {
 const page = () => {
   return (
    <>
-   <CategoryProvider>
+
     <Catvoisepage/>
-   </CategoryProvider>
+  
    </>
   )
 }

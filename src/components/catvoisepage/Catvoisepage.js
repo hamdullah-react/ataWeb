@@ -1,30 +1,47 @@
 "use client";
-import Image from "next/image";
-import React, { useState } from "react";
-import {categories} from '../../app/Data'
-import { useCategoryContext } from "../../components/context/CategoryContext";
 import Link from "next/link";
-import bgimage from "../../../public/img/bgimages.jpg";
-import AllProductCard from "../allproductcard/AllProductCard";
+import { useCategoryContext } from "@/components/context/CategoryContext";
+import AllProductCard from "@/components/allproductcard/AllProductCard";
+import Skeleton from "react-loading-skeleton";
 
-const Catvoisepage = () => {
-    const {
-        selectedCategory,
-        searchQuery,
-        handleCategorySelect, 
-        handleSearchInputChange,
-        filteredProducts} = useCategoryContext();
+const ProductsPage = () => {
+  const {
+    categories,
+    selectedCategory,
+    searchQuery,
+    handleCategorySelect,
+    handleSearchInputChange,
+    filteredProducts,
+    loading,
+    error,
+    products,
+  } = useCategoryContext();
 
+  // Calculate the total number of products based on the filtered list
+  const totalProductsLength = filteredProducts.length;
 
-        const totalProductsLength = categories.reduce((accumulator, category) => {
-
-          return accumulator + category.data.length;
-        }, 0);
+  const skeletonItems = Array.from({ length: 5 }).map((_, index) => {
+    return (
+      <div className="" key={index}>
+        <span>
+          <Skeleton height={200} width={300} />
+        </span>
+        <span>
+          <Skeleton width={200} />
+        </span>
+        <span>
+          <Skeleton width={250} />
+        </span>
+        <span>
+          <Skeleton width={300} />
+        </span>
+      </div>
+    );
+  });
 
   return (
     <>
-      {/* Page Header Start */}
-      <div className="container-fluid  mb-5">
+      <div className="container-fluid mb-5">
         <div
           className="d-flex flex-column align-items-center justify-content-center"
           style={{ minHeight: 300 }}
@@ -41,13 +58,10 @@ const Catvoisepage = () => {
           </div>
         </div>
       </div>
-      {/* Page Header End */}
-      {/* Shop Start */}
+
       <div className="container-fluid pt-5">
         <div className="row px-xl-5">
-          {/* Shop Sidebar Start */}
           <div className="col-lg-3 col-md-12">
-            {/* Price Start */}
             <div className="border-bottom mb-4 pb-4">
               <h5 className="font-weight-semi-bold mb-4">Categories</h5>
               <form>
@@ -62,15 +76,16 @@ const Catvoisepage = () => {
                   <label className="custom-control-label" htmlFor="price-all">
                     All Products
                   </label>
-                  <span className="badge border font-weight-normal">{totalProductsLength}</span>
+                  <span className="badge border font-weight-normal">
+                    {totalProductsLength}
+                  </span>
                 </div>
 
-                {categories.map((category,index) => (
+                {products.map((category) => (
                   <div
-                    key={index}
+                    key={category.id}
                     className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3"
                   >
-                  
                     <input
                       type="checkbox"
                       className="custom-control-input"
@@ -81,18 +96,27 @@ const Catvoisepage = () => {
                     <label
                       className="custom-control-label"
                       htmlFor={`price-${category.id}`}
+                      onClick={() => handleCategorySelect(category.id)}
                     >
                       {category.name}
                     </label>
-                    <span className="badge border font-weight-normal">{category.data.length}</span>
+                    <span className="badge border font-weight-normal">
+                      {
+                        products
+                          .filter((product) =>
+                            product.items.some(
+                              (item) => item.categoryId === category.id
+                            )
+                          )
+                          .flatMap((product) => product.items).length
+                      }
+                    </span>
                   </div>
                 ))}
               </form>
             </div>
-            {/* Price End */}
           </div>
-          {/* Shop Sidebar End */}
-          {/* Shop Product Start */}
+
           <div className="col-lg-9 col-md-12">
             <div className="row pb-3">
               <div className="col-12 pb-1">
@@ -115,27 +139,33 @@ const Catvoisepage = () => {
                   </form>
                 </div>
               </div>
-              {filteredProducts.map((product,index) => (
-                 <div key={index} className="col-6 col-lg-4 col-md-4  pb-1">
-              <Link
-                    style={{ textDecoration: "none" }}
-                    href={{
-                      pathname: "/detail",
-                      query: { data: JSON.stringify(product) },
-                    }}
-                  >
-                  <AllProductCard data={product}/>
-                  </Link>
-               </div>
-              ))}
+
+              {loading ? (
+                <div className="flex justify-around row px-xl-5 pb-3">
+                  {skeletonItems}
+                </div>
+              ) : filteredProducts.length > 0 ? (
+                filteredProducts.map((item, index) => (
+                  <div key={index} className="col-6 col-lg-4 col-md-4 pb-1">
+                    <Link
+                      href={`/productdetail/${item.id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <AllProductCard data={item} />
+                    </Link>
+                  </div>
+                ))
+              ) : (
+                <div className="col-12">
+                  <p>No products found.</p>
+                </div>
+              )}
             </div>
           </div>
-          {/* Shop Product End */}
         </div>
       </div>
-      {/* Shop End */}
     </>
   );
 };
 
-export default Catvoisepage;
+export default ProductsPage;

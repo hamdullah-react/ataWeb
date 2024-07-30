@@ -10,7 +10,10 @@ export async function DELETE(req, { params }) {
     return NextResponse.json({ message: "Item deleted successfully" });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ message: "Error deleting item" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Error deleting item" },
+      { status: 500 }
+    );
   }
 }
 
@@ -23,12 +26,17 @@ export async function PUT(req, { params }) {
       data: {
         name: data.name,
         description: data.description,
+        keyword: data.keyword,
+        metadescription: data.metadescription,
       },
     });
     return NextResponse.json(updatedItem);
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ message: "Error updating item" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Error updating item" },
+      { status: 500 }
+    );
   }
 }
 
@@ -40,15 +48,20 @@ export async function GET(req, { params }) {
         items: true,
       },
       where: { id: id },
-
     });
     if (category) {
       return NextResponse.json(category);
     } else {
-      return NextResponse.json({ message: "Category not found" }, { status: 404 });
+      return NextResponse.json(
+        { message: "Category not found" },
+        { status: 404 }
+      );
     }
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ message: "Error fetching category" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Error fetching category" },
+      { status: 500 }
+    );
   }
 }

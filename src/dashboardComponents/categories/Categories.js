@@ -63,6 +63,9 @@ const Categories = () => {
         <tr>
           <th>Name</th>
           <th>Description</th>
+          <th>meta Description</th>
+          <th>keyword</th>
+
           <th>Actions</th>
         </tr>
       </thead>
@@ -71,6 +74,8 @@ const Categories = () => {
           <tr key={category.id}>
             <td>{category.name}</td>
             <td>{category.description}</td>
+            <td>{category.metadescription}</td>
+            <td>{category.keyword}</td>
             <td>
               <div className="flex gap-2">
                 <FaEye size={20} />

@@ -16,7 +16,7 @@ export default function AllProductCard({ data }) {
       >
         <div style={{ textDecoration: "none", borderRadius: "10px" }} className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
           <Image
-            src={`/${data.img}`}
+            src={`${data.img}`}
             alt={data.name}
             width={500}
             height={100}

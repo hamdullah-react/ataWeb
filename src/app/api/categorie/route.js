@@ -20,7 +20,9 @@ export async function POST(req){
      const newItem = await prisma.category.create({
       data: {
         name: data.name,
-        description:data.description
+        description:data.description,
+        keyword: data.keyword,
+        metadescription: data.metadescription,
       },
     });
     

@@ -16,20 +16,24 @@ const AddProducts = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
+  const [keyword, setkeyword] = useState("");
+  const [metadescription, setmetadescription] = useState("");
   const [show, setShow] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!categoryId || !name || !description || !img) {
+    if (!categoryId || !name || !description || !img || !keyword ||!metadescription) {
       toast.error("Please fill all fields.");
       return;
     }
 
-    await addProduct(categoryId, name, description, img);
+    await addProduct(categoryId, name, description, img, keyword, metadescription);
     setCategoryId("");
     setName("");
     setDescription("");
     setImg("");
+    setkeyword("")
+    setmetadescription("")
     setShow(false);
     toast.success("Product added successfully!");
   };
@@ -104,6 +108,27 @@ const AddProducts = () => {
                 onUploadError={(error) => {
                   toast.error(`ERROR! ${error.message}`);
                 }}
+              />
+            </Form.Group>
+            <Form.Group style={{ marginTop: "1rem" }}>
+              <Form.Label>Meta Description</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Enter category meta description"
+                value={metadescription}
+                onChange={(e) => setmetadescription(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group style={{ marginTop: "1rem" }}>
+              <Form.Label>keyword</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter keyword"
+                value={keyword}
+                onChange={(e) => setkeyword(e.target.value)}
+                required
               />
             </Form.Group>
           </Form>

@@ -23,9 +23,9 @@ const page = ({searchParams}) => {
 
   return (
     <>
-      <Suspense>
+      {/* <Suspense>
         <Categoriespage receivedObject={parsedData}/>
-      </Suspense>
+      </Suspense> */}
 
     </>
   );

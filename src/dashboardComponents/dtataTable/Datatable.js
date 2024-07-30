@@ -63,13 +63,15 @@ const Datatable = () => {
               <th>Categorie</th>
               <th>Name</th>
               <th>Description</th>
+              <th>meat Description</th>
+              <th>keyword</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {products.map((product) => (
               product.items.map((item) => (
-                <tr key={item.id}>
+                <tr key={item.id} >
                   <td>
                     <img
                       src={item.img}
@@ -79,7 +81,9 @@ const Datatable = () => {
                   </td>
                   <td>{product.name}</td>
                   <td>{item.name}</td>
-                  <td>{item.description}</td>
+                  <td >{item.description}</td>
+                  <td>{item.metadescription}</td>
+                  <td>{item.keyword}</td>
                   <td>
                     <div className="flex gap-2">
                       <FaEye size={20} />

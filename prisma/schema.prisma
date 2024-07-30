@@ -11,22 +11,27 @@ datasource db {
 }
 
 model User {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  email    String   @unique
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  email    String @unique
   password String
 }
+
 model Category {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  description String
-  items       Item[]
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  description     String
+  keyword         String
+  metadescription String
+  items           Item[]
 }
 
 model Item {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  img         String
-  description String
-  categoryId  String   @db.ObjectId
-  category    Category @relation(fields: [categoryId], references: [id])
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  img             String
+  description     String
+  keyword         String
+  metadescription String
+  categoryId      String   @db.ObjectId
+  category        Category @relation(fields: [categoryId], references: [id])
 }

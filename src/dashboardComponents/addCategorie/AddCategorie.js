@@ -12,18 +12,22 @@ const AddCategorie = () => {
   const { addCategory, loading } = useAdminContext();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [keyword, setkeyword] = useState("");
+  const [metadescription, setmetadescription] = useState("");
   const [show, setShow] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !description) {
+    if (!name || !description || !keyword ||!metadescription ) {
       toast.error("Please fill all fields.");
       return;
     }
 
-    await addCategory(name, description);
+    await addCategory(name, description,keyword,metadescription);
     setName("");
     setDescription("");
+    setkeyword("")
+    setmetadescription("")
     setShow(false);
     toast.success("Category added successfully!");
   };
@@ -64,6 +68,27 @@ const AddCategorie = () => {
                 placeholder="Enter category description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group style={{ marginTop: "1rem" }}>
+              <Form.Label>Meta Description</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Enter category meta description"
+                value={metadescription}
+                onChange={(e) => setmetadescription(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group style={{ marginTop: "1rem" }}>
+              <Form.Label>keyword</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter keyword"
+                value={keyword}
+                onChange={(e) => setkeyword(e.target.value)}
                 required
               />
             </Form.Group>

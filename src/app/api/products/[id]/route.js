@@ -24,6 +24,8 @@ export async function PUT(req, { params }) {
         name: data.name,
         img: data.img,
         description: data.description,
+        keyword: data.keyword,
+        metadescription: data.metadescription,
         categoryId: data.categoryId,
       },
     });

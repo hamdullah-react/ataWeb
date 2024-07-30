@@ -13,16 +13,18 @@ const UpdateCategory = ({ category }) => {
   const { updateCategory, loading } = useAdminContext();
   const [name, setName] = useState(category.name);
   const [description, setDescription] = useState(category.description);
+  const [keyword, setkeyword] = useState(category.keyword);
+  const [metadescription, setmetadescription] = useState(category.metadescription);
   const [show, setShow] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !description) {
+    if (!name || !description || !keyword ||!metadescription ) {
       toast.error("Please fill all fields.");
       return;
     }
 
-    await updateCategory(category.id, name, description);
+    await updateCategory(category.id, name, description,keyword,metadescription);
     setShow(false);
     toast.success("Category updated successfully!");
   };
@@ -68,8 +70,30 @@ const UpdateCategory = ({ category }) => {
                 required
               />
             </Form.Group>
+            <Form.Group style={{ marginTop: "1rem" }}>
+              <Form.Label>Meta Description</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Enter category meta description"
+                value={metadescription}
+                onChange={(e) => setmetadescription(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group style={{ marginTop: "1rem" }}>
+              <Form.Label>keyword</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter keyword"
+                value={keyword}
+                onChange={(e) => setkeyword(e.target.value)}
+                required
+              />
+            </Form.Group>
           </Form>
         </Modal.Body>
+    
         <Modal.Footer>
           <Button
             variant="danger"

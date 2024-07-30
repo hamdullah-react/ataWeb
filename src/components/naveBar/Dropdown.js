@@ -4,6 +4,8 @@ import { categories } from "../../app/Data";
 import Link from "next/link";
 
 import { motion, Variants } from "framer-motion";
+import { useCategoryContext } from "../context/CategoryContext";
+import Skeleton from "react-loading-skeleton";
 
 const itemVariants = {
   open: {
@@ -15,6 +17,9 @@ const itemVariants = {
 };
 
 const Dropdown = ({toggleNavbar}) => {
+
+  const { products, loading, error } = useCategoryContext();
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -68,19 +73,24 @@ const Dropdown = ({toggleNavbar}) => {
           }}
           style={{ pointerEvents: isOpen ? "auto" : "none" }}
         >
-          {categories.map((menu, index) => (
+
+          {
+            loading ? (<span>
+              <Skeleton width={200} />
+            </span>):(products.map((menu, index) => (
             <Link
             onClick={toggleNavbar}
               key={index}
-              href={{
-                pathname: "/categoriepage1",
-                query: { data: JSON.stringify(menu) },
-              }}
+             href={`/categoriedetail/${menu.id}`}
               className=" dropdown-item"
             >
-              <motion.li variants={itemVariants}>{menu.name} </motion.li>
+              <motion.li variants={itemVariants}>
+                {menu.name} 
+                </motion.li>
             </Link>
-          ))}
+          )))
+          }
+        
         </motion.ul>
       </motion.nav>
       {/* <div className="nav-item dropdown">

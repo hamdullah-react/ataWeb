@@ -47,10 +47,10 @@ export const DashBoardContext = ({ children }) => {
   };
 
   // Add a new category
-  const addCategory = async (name, description) => {
+  const addCategory = async (name, description,keyword,metadescription) => {
     setLoading(true);
     try {
-      await axios.post("/api/categorie", { name, description });
+      await axios.post("/api/categorie", { name, description, keyword,metadescription});
       fetchCategories();
     } catch (error) {
       console.error("Error adding category:", error);
@@ -60,10 +60,10 @@ export const DashBoardContext = ({ children }) => {
   };
 
   // Add a new product
-  const addProduct = async (categoryId, name, description, img) => {
+  const addProduct = async (categoryId, name, description,img,keyword,metadescription) => {
     setLoading(true);
     try {
-      await axios.post("/api/products", { categoryId, name, description, img });
+      await axios.post("/api/products", { categoryId, name, description,img, keyword, metadescription });
       fetchProducts();
     } catch (error) {
       console.error("Error adding product:", error);
@@ -73,10 +73,10 @@ export const DashBoardContext = ({ children }) => {
   };
 
   // Update a category
-  const updateCategory = async (id, name, description) => {
+  const updateCategory = async (id, name, description,keyword,metadescription) => {
     setLoading(true);
     try {
-      await axios.put(`/api/categorie/${id}`, { name, description });
+      await axios.put(`/api/categorie/${id}`, { name, description,keyword,metadescription });
       fetchCategories();
     } catch (error) {
       console.error("Error updating category:", error);
@@ -100,10 +100,10 @@ export const DashBoardContext = ({ children }) => {
   };
 
   // Update a product
-  const updateProduct = async (id, name, description, img,categoryId) => {
+  const updateProduct = async (id, name, description, img,keyword,metadescription, categoryId) => {
     setLoading(true);
     try {
-      await axios.put(`/api/products/${id}`, { name, description, img,categoryId });
+      await axios.put(`/api/products/${id}`, { name, description, img, keyword, metadescription,categoryId });
       fetchProducts();
     } catch (error) {
       console.error("Error updating product:", error);
