@@ -22,6 +22,12 @@ export const metadata = {
     yandex: "yandex-verification-code",
     yahoo: "yahoo-verification-code",
   },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+    },
+  },
   openGraph: {
     type: "website",
     url: "https://www.mgssuae.com",
@@ -36,13 +42,14 @@ export const metadata = {
         alt: "MGSS UAE Logo",
       },
     ],
+ 
   },
   twitter: {
     card: "summary_large_image",
-    site: "@yourtwitterhandle",
-    title: "MGSS UAE - Quality Products for Every Need",
+    site: "https://www.mgssuae.com",
+    title: "MGSS UAE - Quality Security Products, CCTV Cameras, Network Cables, and Advanced Surveillance Solutions",
     description:
-      "Discover a diverse selection of high-quality products at MGSS UAE. From camera polls to cables, devices, adaptors, and connectors, find everything you need for your business or personal projects. Shop now!",
+      "Discover a diverse range of quality products at MGSS UAE. Our collection spans from camera poles and cables to innovative devices and adapters, ensuring all your business and personal project needs are met. Find superior connectors, CCTV cameras, and advanced surveillance equipment in our inventory. Safeguard your property with state-of-the-art network cables and sophisticated alarm systems. Utilize our effective access control solutions and comprehensive security management tools. Embrace cutting-edge security innovations and stay ahead with the latest advancements.. Rely on our dependable products for optimal protection. Start shopping today for top-tier security systems. Count on MGSS for all your security essentials.",
     image: "https://www.mgssuae.com/logo.png",
   },
   additionalMetaTags: [
@@ -61,7 +68,7 @@ export const metadata = {
     "@type": "Organization",
     name: "MGSS UAE",
     url: "https://www.mgssuae.com",
-    logo: "https://www.mgssuae.com/logo.png",
+    logo: "favicon.ico",
     sameAs: [
       "https://www.facebook.com/yourprofile",
       "https://www.instagram.com/yourprofile",
