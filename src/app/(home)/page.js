@@ -17,6 +17,7 @@ export default function Home() {
   {/* <Headerslider/> */}
   {/* <Catagorie/> */}
   {/* <Lable/> */}
+  
   <Banner/>
   {/* <BootsrtrapSlider/> */}
   <Homeaboutus/>
