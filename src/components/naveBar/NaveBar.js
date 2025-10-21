@@ -1,18 +1,37 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
-import Dropdown from "./Dropdown";
+import React, { useState, useEffect } from "react";
 import { categories } from "../../app/Data";
 import SearchDropDown from "./SearchDropDown";
 import Mobilenavebar from "./Mobilenavebar";
-import Whatsapp from "../whatsapp/Whatsapp";
-import Image from "next/image";
-import logo from "../../../public/img/logo.png";
 import Logo from "../logo/Logo";
 
 function NaveBar() {
   const [searchInput, setSearchInput] = useState("");
   const [filteredCategories, setFilteredCategories] = useState(categories);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [searchFocused, setSearchFocused] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        setIsSearchModalOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, []);
 
   // Function to handle search input changes
   const handleSearchInputChange = (e) => {
@@ -34,205 +53,194 @@ function NaveBar() {
     setFilteredCategories(filtered);
   };
 
+  // Open search modal
+  const openSearchModal = () => {
+    setIsSearchModalOpen(true);
+    setSearchInput("");
+    setFilteredCategories(categories);
+  };
+
+  // Close search modal
+  const closeSearchModal = () => {
+    setIsSearchModalOpen(false);
+    setSearchInput("");
+  };
+
   return (
     <>
-      <>
-        {/* Topbar Start */}
-        <div className="container-fluid d-none d-lg-block">
-          {/* <div className="row bg-secondary py-2 px-xl-5">
-            <div className="col-lg-6 d-none d-lg-block">
-              <div className="d-inline-flex align-items-center">
-                <Link className="text-dark" href="">
-                  FAQs
-                </Link>
-                <span className="text-muted px-2">|</span>
-                <Link className="text-dark" href="">
-                  Help
-                </Link>
-                <span className="text-muted px-2">|</span>
-                <Link className="text-dark" href="">
-                  Support
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-6 text-center text-lg-right">
-              <div className="d-inline-flex align-items-center">
-                <a className="text-dark px-2" href="">
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a className="text-dark px-2" href="">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a className="text-dark px-2" href="">
-                  <i className="fab fa-linkedin-in" />
-                </a>
-                <a className="text-dark px-2" href="">
-                  <i className="fab fa-instagram" />
-                </a>
-                <a className="text-dark pl-2" href="">
-                  <i className="fab fa-youtube" />
-                </a>
-              </div>
-            </div>
-          </div> */}
-          <div className="row align-items-center py-3 px-xl-5">
-            <div className="col-lg-3 d-none d-lg-block">
-              
+      {/* Main Navbar */}
+      <nav
+        className={`sticky top-0 z-50 bg-white transition-all duration-300 d-none d-lg-block ${
+          isScrolled ? "shadow-lg" : "shadow-sm"
+        }`}
+      >
+        <div className="container-fluid px-xl-5">
+          {/* Single Row Navigation */}
+          <div className="flex items-center gap-4 py-2">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <Logo />
             </div>
 
-            {/* <div className="col-lg-6 col-6 text-left">
-              <form action="">
-                <div className="input-group">
+            {/* Navigation Links */}
+            <nav className="flex items-center gap-1">
+              <Link
+                href="/"
+                className="px-2.5 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-300 font-medium no-underline whitespace-nowrap"
+              >
+                <i className="fa fa-home mr-1 text-xs"></i>Home
+              </Link>
+              <Link
+                href="/categories"
+                className="px-2.5 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-300 font-medium no-underline whitespace-nowrap"
+              >
+                <i className="fa fa-list mr-1 text-xs"></i>Categories
+              </Link>
+              <Link
+                href="/products"
+                className="px-2.5 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-300 font-medium no-underline whitespace-nowrap"
+              >
+                <i className="fa fa-th mr-1 text-xs"></i>Products
+              </Link>
+              <Link
+                href="/aboutus"
+                className="px-2.5 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-300 font-medium no-underline whitespace-nowrap"
+              >
+                <i className="fa fa-info-circle mr-1 text-xs"></i>About
+              </Link>
+              <Link
+                href="/contactus"
+                className="px-2.5 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-300 font-medium no-underline whitespace-nowrap"
+              >
+                <i className="fa fa-envelope mr-1 text-xs"></i>Contact
+              </Link>
+            </nav>
+
+            {/* Spacer */}
+            <div className="flex-grow"></div>
+
+            {/* Right Side Actions */}
+            <div className="flex items-center gap-3 flex-shrink-0">
+              {/* Search Icon */}
+              <button
+                onClick={openSearchModal}
+                className="w-9 h-9 bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-sm hover:shadow-md"
+                aria-label="Search"
+              >
+                <i className="fa fa-search text-sm"></i>
+              </button>
+
+              {/* Phone */}
+              <a
+                href="tel:+971562071106"
+                className="flex items-center gap-1.5 text-xs no-underline whitespace-nowrap"
+              >
+                <i className="fa fa-phone text-green-600"></i>
+                <span className="text-gray-800 font-semibold hover:text-green-600">
+                  +971 56 2071 106
+                </span>
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/971562071106"
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-all duration-300 shadow-sm hover:shadow-md no-underline text-xs whitespace-nowrap"
+              >
+                <i className="fab fa-whatsapp text-sm"></i>
+                <span className="font-medium">WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Search Modal */}
+      {isSearchModalOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-start justify-center pt-20 px-4"
+          onClick={closeSearchModal}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+          {/* Modal Content */}
+          <div
+            className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden animate-fadeIn"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <h3 className="text-lg font-bold text-gray-800">
+                Search Products
+              </h3>
+              <button
+                onClick={closeSearchModal}
+                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-300"
+                aria-label="Close"
+              >
+                <i className="fa fa-times text-gray-600"></i>
+              </button>
+            </div>
+
+            {/* Search Input */}
+            <div className="p-4">
+              <form onSubmit={(e) => e.preventDefault()}>
+                <div className="relative">
                   <input
                     type="text"
-                    className="form-control"
-                    placeholder="Search for products"
+                    className="w-full py-3 px-5 pr-12 text-base rounded-full border-2 border-gray-300 focus:border-green-500 focus:outline-none transition-all duration-300"
+                    placeholder="Search for products..."
                     value={searchInput}
                     onChange={handleSearchInputChange}
+                    autoFocus
                   />
-                  <div className="input-group-append">
-                    <span className="input-group-text bg-transparent text-primary">
-                      <i className="fa fa-search" />
-                    </span>
+                  <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
+                    <div className="w-9 h-9 bg-green-600 rounded-full flex items-center justify-center">
+                      <i className="fa fa-search text-white text-sm"></i>
+                    </div>
                   </div>
                 </div>
               </form>
-      
+
+              {/* Search Results */}
               {searchInput && (
-                <SearchDropDown categories={filteredCategories} />
+                <div className="mt-4 max-h-96 overflow-y-auto">
+                  <SearchDropDown categories={filteredCategories} onProductClick={closeSearchModal} />
+                </div>
               )}
-            </div> */}
 
-            {/* <div className="col-lg-3 col-6 text-right">
-              <a href="" className="btn border">
-                <i className="fas fa-heart text-primary" />
-                <span className="badge">0</span>
-              </a>
-              <a href="" className="btn border">
-                <i className="fas fa-shopping-cart text-primary" />
-                <span className="badge">0</span>
-              </a>
-            </div> */}
-          </div>
-        </div>
-        {/* Topbar End */}
-      
-          {/* Navbar Start */}
-          <div className="container-fluid mb-5 d-none d-lg-block h-[30px]">
-            <div className=" row border-top px-xl-5">
-            <Logo />
-              <div className="flex col-lg-3 d-none d-lg-block">
-                <Dropdown />
-              </div>
-              <div className="col-lg-8">
-                <nav className="navbar navbar-expand-lg  navbar-light py-3 py-lg-0 px-0">
-                  <Link
-                    href=""
-                    className="text-decoration-none d-block d-lg-none"
-                  >
-                    <h1 className="m-0 display-5 font-weight-semi-bold">
-                      {/* <span className="text-primary font-weight-bold border px-3 mr-1">
-                        M
-                      </span> */}
-                      MGSS
-                    </h1>
-                  </Link>
-                  <div
-                    className=" navbar-collapse justify-content-between"
-                    id="navbarCollapse"
-                  >
-                    <div className="navbar-nav mr-auto py-0">
-                      <Link href="/" className="nav-item nav-link active">
-                        Home
-                      </Link>
-                      <Link href="products" className="nav-item nav-link">
-                        All Products
-                      </Link>
+              {/* No Results */}
+              {searchInput && filteredCategories.length === 0 && (
+                <div className="mt-8 text-center py-8">
+                  <i className="fa fa-search text-gray-300 text-5xl mb-4"></i>
+                  <p className="text-gray-600 text-lg">
+                    No products found for "{searchInput}"
+                  </p>
+                  <p className="text-gray-500 text-sm mt-2">
+                    Try searching with different keywords
+                  </p>
+                </div>
+              )}
 
-                      <Link href="/aboutus" className="nav-item nav-link">
-                        About Us
-                      </Link>
-
-                      <Link href="/contactus" className="nav-item nav-link">
-                        Contact
-                      </Link>
-
-                      <span className="flex justify-center items-center ml-5 border-2 border-white px-2 bg-[#9af09a] text-black rounded-[20px]">
-                        <Whatsapp />
-                      </span>
-                    </div>
-                  </div>
-                </nav>
-                {/* <div
-                  id="header-carousel"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    <div
-                      className="carousel-item active"
-                      style={{ height: 410 }}
-                    >
-                      <img className="img-fluid" src="img/1.jpeg" alt="Image" />
-                      <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div className="p-3" style={{ maxWidth: 700 }}>
-                          <h4 className="text-light text-uppercase font-weight-medium mb-3">
-                            10% Off Your First Order
-                          </h4>
-                          <h3 className="display-4 text-white font-weight-semi-bold mb-4"></h3>
-                          <a href="" className="btn btn-light py-2 px-3">
-                            Shop Now
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item" style={{ height: 410 }}>
-                      <img className="img-fluid" src="img/4.jpeg" alt="Image" />
-                      <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div className="p-3" style={{ maxWidth: 700 }}>
-                          <h4 className="text-light text-uppercase font-weight-medium mb-3">
-                            10% Off Your First Order
-                          </h4>
-                          <h3 className="display-4 text-white font-weight-semi-bold mb-4"></h3>
-                          <a href="" className="btn btn-light py-2 px-3">
-                            Shop Now
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    className="carousel-control-prev"
-                    href="#header-carousel"
-                    data-slide="prev"
-                  >
-                    <div
-                      className="btn btn-dark"
-                      style={{ width: 45, height: 45 }}
-                    >
-                      <span className="carousel-control-prev-icon mb-n2" />
-                    </div>
-                  </a>
-                  <a
-                    className="carousel-control-next"
-                    href="#header-carousel"
-                    data-slide="next"
-                  >
-                    <div
-                      className="btn btn-dark"
-                      style={{ width: 45, height: 45 }}
-                    >
-                      <span className="carousel-control-next-icon mb-n2" />
-                    </div>
-                  </a>
-                </div> */}
-              </div>
+              {/* Initial State */}
+              {!searchInput && (
+                <div className="mt-8 text-center py-8">
+                  <i className="fa fa-search text-gray-300 text-5xl mb-4"></i>
+                  <p className="text-gray-600 text-lg">
+                    Start typing to search products
+                  </p>
+                  <p className="text-gray-500 text-sm mt-2">
+                    Search from {categories.reduce((acc, cat) => acc + cat.data.length, 0)} products
+                  </p>
+                </div>
+              )}
             </div>
           </div>
-          {/* Navbar End */}
-          <Mobilenavebar />
-        
-      </>
+        </div>
+      )}
+
+      {/* Mobile Navbar */}
+      <Mobilenavebar openSearchModal={openSearchModal} />
     </>
   );
 }
