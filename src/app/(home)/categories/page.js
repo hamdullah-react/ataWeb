@@ -13,70 +13,70 @@ export const metadata = {
 
 const CategoriesPage = () => {
   return (
-    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen py-12">
-      <div className="container-fluid px-xl-5">
+    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen py-4">
+      <div className="w-full px-4 md:px-8 lg:px-12">
         {/* Page Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
+        <div className="text-center mb-5">
+          <h1 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
             Product <span className="text-green-600">Categories</span>
           </h1>
-          <div className="w-20 h-1 bg-green-600 mx-auto rounded-full mb-4"></div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <div className="w-12 h-0.5 bg-green-600 mx-auto rounded-full mb-2"></div>
+          <p className="text-gray-600 text-sm max-w-2xl mx-auto">
             Explore our comprehensive range of security camera accessories
             organized by categories
           </p>
         </div>
 
         {/* Categories Grid */}
-        <div className="row g-3 g-md-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {categories.map((category, index) => (
-            <div key={index} className="col-lg-3 col-md-4 col-sm-6 col-6">
-              <Link
-                href={`/categories/${category.slug}`}
-                className="group block no-underline"
-              >
-                <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-green-200">
-                  {/* Category Image Grid */}
-                  <div className="relative h-40 sm:h-48 md:h-52 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                    <div className="grid grid-cols-2 gap-1 sm:gap-2 p-2 sm:p-3 h-full">
-                      {category.data.slice(0, 4).map((product, idx) => (
-                        <div
-                          key={idx}
-                          className="relative bg-white rounded-md overflow-hidden shadow-sm"
-                        >
-                          <Image
-                            src={`/${product.img}`}
-                            alt={product.name}
-                            fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-500"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Category Info */}
-                  <div className="p-3 sm:p-4">
-                    <h2 className="text-sm sm:text-base md:text-lg font-bold text-gray-800 group-hover:text-green-600 transition-colors duration-300 mb-1 line-clamp-1">
-                      {category.name}
-                    </h2>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      {category.data.length} Products
-                    </p>
+            <Link
+              key={index}
+              href={`/categories/${category.slug}`}
+              className="group block no-underline"
+              style={{ textDecoration: 'none' }}
+            >
+              <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 hover:border-green-200">
+                {/* Category Image Grid */}
+                <div className="relative h-32 sm:h-36 md:h-40 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                  <div className="grid grid-cols-2 gap-1 p-1.5 sm:p-2 h-full">
+                    {category.data.slice(0, 4).map((product, idx) => (
+                      <div
+                        key={idx}
+                        className="relative bg-white rounded-sm overflow-hidden shadow-sm"
+                      >
+                        <Image
+                          src={`/${product.img}`}
+                          alt={product.name}
+                          fill
+                          className="object-contain group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </Link>
-            </div>
+
+                {/* Category Info */}
+                <div className="p-2.5 sm:p-3">
+                  <h2 className="text-xs sm:text-sm md:text-base font-bold text-gray-800 group-hover:text-green-600 transition-colors duration-300 mb-0.5 line-clamp-1">
+                    {category.name}
+                  </h2>
+                  <p className="text-xs text-gray-500">
+                    {category.data.length} Products
+                  </p>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
 
         {/* All Products Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-6">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-5 py-2.5 text-sm rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
           >
-            <i className="fa fa-th"></i>
+            <i className="fa fa-th text-xs"></i>
             <span>View All Products</span>
           </Link>
         </div>

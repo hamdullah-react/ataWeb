@@ -43,11 +43,11 @@ export default function CategoryPage({ params }) {
   }
 
   return (
-    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen py-12">
-      <div className="container-fluid px-xl-5">
+    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen py-4">
+      <div className="w-full px-4 md:px-8 lg:px-12">
         {/* Breadcrumb */}
-        <nav className="mb-6">
-          <ol className="flex items-center gap-2 text-sm text-gray-600">
+        <nav className="mb-4">
+          <ol className="flex items-center gap-2 text-xs text-gray-600">
             <li>
               <Link
                 href="/"
@@ -71,17 +71,17 @@ export default function CategoryPage({ params }) {
         </nav>
 
         {/* Category Header */}
-        <div className="mb-10">
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-md">
-                <i className="fa fa-box text-white text-2xl"></i>
+        <div className="mb-5">
+          <div className="bg-white rounded-xl shadow-md p-4 md:p-5 border border-gray-100">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-sm">
+                <i className="fa fa-box text-white text-lg"></i>
               </div>
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+                <h1 className="text-xl md:text-2xl font-bold text-gray-800">
                   {category.name}
                 </h1>
-                <p className="text-gray-600 mt-1">
+                <p className="text-xs md:text-sm text-gray-600 mt-0.5">
                   {category.data.length} Products Available
                 </p>
               </div>
@@ -90,34 +90,36 @@ export default function CategoryPage({ params }) {
         </div>
 
         {/* Products Grid */}
-        <div className="row g-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-5">
           {category.data.map((product, index) => (
-            <div key={index} className="mt-4 col-lg-3 col-md-4 col-sm-6 col-6">
-              <Link
-                href={`/products/${product.slug}`}
-                className="no-underline"
-              >
-                <AllProductCard data={product} />
-              </Link>
-            </div>
+            <Link
+              key={index}
+              href={`/products/${product.slug}`}
+              className="no-underline"
+              style={{ textDecoration: 'none' }}
+            >
+              <AllProductCard data={product} />
+            </Link>
           ))}
         </div>
 
         {/* Back Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center mt-10">
+        <div className="flex flex-wrap gap-3 justify-center mt-6">
           <Link
             href="/categories"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-full font-semibold transition-all duration-300 no-underline"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-full font-semibold transition-all duration-300 no-underline"
+            style={{ textDecoration: 'none' }}
           >
-            <i className="fa fa-arrow-left"></i>
+            <i className="fa fa-arrow-left text-xs"></i>
             <span>All Categories</span>
           </Link>
 
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-2 text-sm rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
+            style={{ textDecoration: 'none' }}
           >
-            <i className="fa fa-th"></i>
+            <i className="fa fa-th text-xs"></i>
             <span>All Products</span>
           </Link>
         </div>

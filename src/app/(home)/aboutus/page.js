@@ -44,11 +44,11 @@ const Aboutus = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen py-8">
+    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen py-4">
       <div className="container-fluid px-xl-5">
         {/* Breadcrumb */}
-        <nav className="mb-6">
-          <ol className="flex items-center gap-2 text-sm text-gray-600">
+        <nav className="mb-4">
+          <ol className="flex items-center gap-2 text-xs text-gray-600">
             <li>
               <Link href="/" className="hover:text-green-600 transition-colors">
                 Home
@@ -60,14 +60,14 @@ const Aboutus = () => {
         </nav>
 
         {/* Hero Section */}
-        <div className="mb-12">
-          <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 md:p-12 shadow-xl text-white">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="mb-6">
+          <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-4 md:p-6 shadow-lg text-white">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-2xl md:text-3xl font-bold mb-2">
                 About MGSS
               </h1>
-              <div className="w-20 h-1 bg-white mx-auto rounded-full mb-6"></div>
-              <p className="text-lg md:text-xl text-green-50">
+              <div className="w-12 h-0.5 bg-white mx-auto rounded-full mb-3"></div>
+              <p className="text-sm md:text-base text-green-50">
                 Your Trusted Security Solutions Provider Since 2018
               </p>
             </div>
@@ -75,23 +75,23 @@ const Aboutus = () => {
         </div>
 
         {/* Company Story */}
-        <div className="row mb-12">
+        <div className="row mb-6">
           <div className="col-lg-10 mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <i className="fa fa-building text-green-600 text-2xl"></i>
+            <div className="bg-white rounded-xl shadow-md p-4 md:p-5 border border-gray-100">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="fa fa-building text-green-600 text-lg"></i>
                 </div>
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                  <h2 className="text-lg md:text-xl font-bold text-gray-800">
                     Mohammad Ghulam Security Solution
                   </h2>
-                  <p className="text-gray-600">Founded in 2018 • Dubai, UAE</p>
+                  <p className="text-xs text-gray-600">Founded in 2018 • Dubai, UAE</p>
                 </div>
               </div>
 
               <div className="prose max-w-none">
-                <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                <p className="text-gray-700 leading-relaxed text-sm mb-3">
                   <strong>Mohammad Ghulam Security Solution (MGSS)</strong> was
                   founded in 2018 in Dubai, UAE. We specialize in providing
                   comprehensive security solutions including security camera
@@ -99,7 +99,7 @@ const Aboutus = () => {
                   adapters, and power supplies.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                <p className="text-gray-700 leading-relaxed text-sm mb-3">
                   At <strong>MGSS</strong>, our main goal is customer
                   satisfaction, offering the best quality products at
                   competitive prices. We believe in building long-term
@@ -107,7 +107,7 @@ const Aboutus = () => {
                   loyalty.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed text-lg">
+                <p className="text-gray-700 leading-relaxed text-sm">
                   Our commitment to innovation and excellence drives us to
                   continuously improve and expand our product offerings. We
                   prioritize safety and reliability in all our solutions,
@@ -121,26 +121,26 @@ const Aboutus = () => {
         </div>
 
         {/* Core Values */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+        <div className="mb-6">
+          <div className="text-center mb-5">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
               Our Core <span className="text-green-600">Values</span>
             </h2>
-            <div className="w-20 h-1 bg-green-600 mx-auto rounded-full"></div>
+            <div className="w-12 h-0.5 bg-green-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="row g-4">
+          <div className="row g-3">
             {values.map((value, index) => (
-              <div key={index} className="col-md-6 col-lg-3 mt-4">
-                <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 h-100 border border-gray-100 hover:border-green-200">
+              <div key={index} className="col-md-6 col-lg-3 mt-3">
+                <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-4 h-100 border border-gray-100 hover:border-green-200">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                      <i className={`fa ${value.icon} text-white text-2xl`}></i>
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm">
+                      <i className={`fa ${value.icon} text-white text-lg`}></i>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    <h3 className="text-base font-bold text-gray-800 mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       {value.description}
                     </p>
                   </div>
@@ -151,16 +151,16 @@ const Aboutus = () => {
         </div>
 
         {/* Stats */}
-        <div className="mb-12">
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+        <div className="mb-6">
+          <div className="bg-white rounded-xl shadow-md p-4 md:p-5 border border-gray-100">
             <div className="row text-center">
               {stats.map((stat, index) => (
-                <div key={index} className="col-6 col-md-3 mb-4 mb-md-0">
-                  <div className="p-4">
-                    <h3 className="text-4xl font-bold text-green-600 mb-2">
+                <div key={index} className="col-6 col-md-3 mb-3 mb-md-0">
+                  <div className="p-2">
+                    <h3 className="text-2xl md:text-3xl font-bold text-green-600 mb-1">
                       {stat.number}
                     </h3>
-                    <p className="text-gray-600 font-medium">{stat.label}</p>
+                    <p className="text-xs md:text-sm text-gray-600 font-medium">{stat.label}</p>
                   </div>
                 </div>
               ))}
@@ -171,30 +171,30 @@ const Aboutus = () => {
         {/* Contact CTA */}
         <div className="row">
           <div className="col-lg-10 mx-auto">
-            <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 md:p-10 text-white shadow-xl">
+            <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-5 md:p-6 text-white shadow-lg">
               <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <h2 className="text-xl md:text-2xl font-bold mb-3 text-white">
                   Ready to Secure Your Property?
                 </h2>
-                <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
+                <p className="text-gray-300 text-sm mb-4 max-w-2xl mx-auto">
                   Get in touch with us today for expert advice and quality
                   security solutions tailored to your needs.
                 </p>
 
-                <div className="flex flex-wrap gap-4 justify-center">
+                <div className="flex flex-wrap gap-3 justify-center">
                   <a
                     href="https://wa.me/971562071106"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-5 py-2.5 text-sm rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
                   >
-                    <i className="fab fa-whatsapp text-xl"></i>
+                    <i className="fab fa-whatsapp text-base"></i>
                     <span>WhatsApp Us</span>
                   </a>
 
                   <Link
                     href="/contactus"
-                    className="inline-flex items-center gap-2 bg-white text-gray-800 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
+                    className="inline-flex items-center gap-2 bg-white text-gray-800 hover:bg-gray-100 px-5 py-2.5 text-sm rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
                   >
-                    <i className="fa fa-envelope"></i>
+                    <i className="fa fa-envelope text-sm"></i>
                     <span>Contact Us</span>
                   </Link>
                 </div>

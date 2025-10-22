@@ -6,57 +6,58 @@ import AllProductCard from "../allproductcard/AllProductCard";
 const AllProducts = () => {
   return (
     <>
-      <div className="bg-gradient-to-b from-white to-gray-50 py-12">
-        <div className="container-fluid px-xl-5">
+      <div className="bg-gradient-to-b from-white to-gray-50 py-6">
+        <div className="w-full px-4 md:px-8 lg:px-12">
           {/* Section Header */}
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+          <div className="text-center mb-5">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
               Our <span className="text-green-600">Products</span>
             </h2>
-            <div className="w-20 h-1 bg-green-600 mx-auto rounded-full mb-2"></div>
-            <p className="text-gray-600 text-sm max-w-2xl mx-auto">
+            <div className="w-12 h-0.5 bg-green-600 mx-auto rounded-full mb-1.5"></div>
+            <p className="text-gray-600 text-xs md:text-sm max-w-2xl mx-auto">
               Explore our comprehensive range of security camera accessories and equipment
             </p>
           </div>
 
           {/* Categories */}
           {categories.map((cat, catIndex) => (
-            <div key={catIndex} className="mb-12">
+            <div key={catIndex} className="mb-6">
               {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6 px-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-md">
-                  <i className="fa fa-box text-white"></i>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-sm">
+                  <i className="fa fa-box text-white text-sm"></i>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800">{cat.name}</h3>
-                  <p className="text-sm text-gray-500">{cat.data.length} Products Available</p>
+                  <h3 className="text-base md:text-lg font-bold text-gray-800">{cat.name}</h3>
+                  <p className="text-xs text-gray-500">{cat.data.length} Products Available</p>
                 </div>
               </div>
 
               {/* Products Grid */}
-              <div className="row g-4 px-3">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 {cat.data.map((product, productIndex) => (
-                  <div key={productIndex} className="mt-5 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <Link
-                      href={`/products/${product.slug}`}
-                      className="no-underline"
-                    >
-                      <AllProductCard data={product} />
-                    </Link>
-                  </div>
+                  <Link
+                    key={productIndex}
+                    href={`/products/${product.slug}`}
+                    className="no-underline"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <AllProductCard data={product} />
+                  </Link>
                 ))}
               </div>
             </div>
           ))}
 
           {/* View All Button */}
-          <div className="text-center mt-10">
+          <div className="text-center mt-6">
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-5 py-2.5 text-sm rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg no-underline"
+              style={{ textDecoration: 'none' }}
             >
               <span>View All Products</span>
-              <i className="fa fa-arrow-right text-sm"></i>
+              <i className="fa fa-arrow-right text-xs"></i>
             </Link>
           </div>
         </div>
