@@ -37,7 +37,7 @@ const Banner = () => {
 
   return (
    <>
-   <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+   <div className=" relative w-full h-[400px] md:h-[400px] lg:h-[500px] overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
     {/* Slider Images */}
     {slides.map((slide, index) => (
       <div
@@ -62,9 +62,9 @@ const Banner = () => {
     {/* Content */}
     <div className="relative h-full w-full px-4 md:px-8 lg:px-12">
       <div className="flex items-center h-full max-w-3xl">
-        <div className="text-white space-y-3 md:space-y-4">
+        <div className=" md:mt-0 text-white md:space-y-4">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-green-600/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold mb-2 animate-fade-in">
+          <div className=" inline-flex items-center gap-2 bg-green-600/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold mb-2 animate-fade-in">
             <i className="fa fa-shield-alt text-xs"></i>
             <span>Trusted Security Solutions Since 2018</span>
           </div>
